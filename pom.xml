@@ -81,12 +81,13 @@
                         <version>1.1</version>
                         <executions>
                             <execution>
-                                <phase>test</phase>
+                                <phase>validate</phase>
                                 <goals>
                                     <goal>run</goal>
                                 </goals>
                                 <configuration>
                                     <tasks>
+                                        <echo>COPYING</echo>
                                         <copy overwrite="true" file="src/main/resources/config/application-distribution.properties"
                                               tofile="src/main/resources/application.properties"/>
                                     </tasks>
@@ -100,11 +101,21 @@
                         <version>2.1.1</version>
                         <configuration>
                             <classifier>distribution</classifier>
-                            <warSourceDirectory>${project.build.directory}/${project.build.finalName}</warSourceDirectory>
-                            <packagingExcludes>WEB-INF/classes/config/**,WEB-INF/classes/INSTALL/**</packagingExcludes>
+                            <warSourceDirectory>${project.build.directory}/${project.build.finalName} </warSourceDirectory>
+                            <packagingExcludes>WEB-INF/classes/config/**</packagingExcludes>
                         </configuration>
                     </plugin>
-
+                    <plugin>
+                        <groupId>org.apache.tomcat.maven</groupId>
+                        <artifactId>tomcat7-maven-plugin</artifactId>
+                        <version>2.2</version>
+                        <configuration>
+                            <url>http://localhost:8080/manager/text</url>
+                            <server>localhost</server>
+                            <path>/example</path>
+                            <warFile>${project.build.directory}/${project.artifactId}-${project.version}-distribution.war</warFile>
+                        </configuration>
+                    </plugin>
                 </plugins>
             </build>
         </profile>
