@@ -18,7 +18,7 @@
 		<url>http://www.dke.univie.ac.at</url>
 	</organization>
     <scm>
-        <connection>scm:git:git://git@gitlab.dke.univie.ac.at:OMiLAB_Development/ServiceTemplate.git</connection>
+        <connection>scm:git:git://git@gitlab.dke.univie.ac.at:OMiLAB_Development/ExampleService.git</connection>
     </scm>
 	<properties>
 		<main.basedir>${basedir}/../..</main.basedir>
@@ -89,9 +89,6 @@
                                     <tasks>
                                         <copy overwrite="true" file="src/main/resources/config/application-distribution.properties"
                                               tofile="src/main/resources/application.properties"/>
-                                        <!-- <mkdir dir="${project.build.outputDirectory}/INSTALL" />
-                                         <copydir src="INSTALL" dest="${project.build.outputDirectory}/INSTALL"  />
-                                         <delete file="${project.build.outputDirectory}/application-*.properties"/>-->
                                     </tasks>
                                 </configuration>
                             </execution>
@@ -104,9 +101,10 @@
                         <configuration>
                             <classifier>distribution</classifier>
                             <warSourceDirectory>${project.build.directory}/${project.build.finalName}</warSourceDirectory>
-                            <packagingExcludes>WEB-INF/classes/config/**</packagingExcludes>
+                            <packagingExcludes>WEB-INF/classes/config/**,WEB-INF/classes/INSTALL/**</packagingExcludes>
                         </configuration>
                     </plugin>
+
                 </plugins>
             </build>
         </profile>
