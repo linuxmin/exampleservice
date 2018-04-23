@@ -4,18 +4,14 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.context.web.SpringBootServletInitializer;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
+import org.springframework.boot.SpringApplication;
 
 @SpringBootApplication
 @EnableJpaRepositories
-public class ExampleApplication extends SpringBootServletInitializer {
+public class ExampleApplication {
 
 	public static void main(String[] args) {
-		new ExampleApplication().configure(new SpringApplicationBuilder(ExampleApplication.class)).run(args);
-	}
-
-	@Override
-	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(ExampleApplication.class);
+	        SpringApplication.run(ExampleApplication.class, args);
 	}
 
 }
