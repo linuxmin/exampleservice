@@ -14,5 +14,5 @@ public interface ForumUserRepository extends Repository<ForumUser, Integer> {
 
     public ForumUser findByUserName(String userName);
 
-    ForumUser save(ForumUser f) throws MySQLIntegrityConstraintViolationException;
+    ForumUser save(ForumUser f);
 }

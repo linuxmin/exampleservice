@@ -1,6 +1,7 @@
 package org.omilab.services.exampleservice.rest;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
+import org.hibernate.exception.ConstraintViolationException;
 import org.omilab.services.exampleservice.model.ForumUser;
 import org.omilab.services.exampleservice.model.GenericRequest;
 import org.omilab.services.exampleservice.model.GenericServiceContent;
@@ -62,7 +63,7 @@ public final class PSMConnectorView {
 						request.getParams().get("mail"));
 				forumUserRepository.save(forumUser);
 				sb.append(forumUser.getUserName());
-			}catch(MySQLIntegrityConstraintViolationException e){
+			}catch(ConstraintViolationException e){
 				sb.append("Username existiert bereits");
 			}
 		}else{
