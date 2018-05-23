@@ -10,7 +10,7 @@ public class ForumUser {
     @GeneratedValue
     private Integer userId;
 
-    @Column
+    @Column(name = "user_name")
     private String userName;
 
     @Column
