@@ -56,6 +56,8 @@ public final class PSMConnectorView {
 
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<div class=\"panel panel-default\"><div class=\"panel-body\">");
+		if(request.getParams().get("login") !=null)
+			sb.append(request.getParams().get("login"));
 		if(request.getParams().get("username") !=null){
 			try {
 				forumUser.setUserData(request.getParams().get("username"),
@@ -63,6 +65,11 @@ public final class PSMConnectorView {
 						request.getParams().get("mail"));
 				forumUserRepository.save(forumUser);
 				sb.append(forumUser.getUserName());
+				sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
+						" :<br>\n" + "<input type=\"radio\" name=\"login\" " +
+						"value=\"" + forumUser.getUserMail() + "\" >\n" +
+						"<input type=\"submit\">\n" +
+						"</form>");
 			}catch(Exception e){
 				sb.append("Username existiert bereits");
 				sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
