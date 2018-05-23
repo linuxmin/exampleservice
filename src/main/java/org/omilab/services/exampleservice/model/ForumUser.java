@@ -11,14 +11,29 @@ public class ForumUser {
     @GeneratedValue
     private Integer userId;
 
-    @Column
+    @Column(unique = true)
     private String userName;
 
     @Column
     private String userPassword;
 
+    @Column String userMail;
+
     public ForumUser(){}
 
+    public void setUserData(String userName, String userPassword, String userMail){
+        setUserName(userName);
+        setUserPassword(userPassword);
+        setUserMail(userMail);
+    }
+
+    public String getUserMail() {
+        return userMail;
+    }
+
+    public void setUserMail(String userMail) {
+        this.userMail = userMail;
+    }
 
     public Integer getUserId() {
         return userId;

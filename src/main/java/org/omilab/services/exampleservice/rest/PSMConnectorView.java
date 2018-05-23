@@ -54,19 +54,22 @@ public final class PSMConnectorView {
 
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<div class=\"panel panel-default\"><div class=\"panel-body\">");
-		if(request.getParams().get("content") !=null){
-			forumUser =  forumUserRepository.findByUserName(request.getParams().get("content"));
+		if(request.getParams().get("username") !=null){
+			forumUser.setUserData(request.getParams().get("username"),
+					request.getParams().get("password"),
+					request.getParams().get("mail"));
+			forumUserRepository.save(forumUser);
 			sb.append(forumUser.getUserName());
 		}else{
-
-			forumUser.setUserName("harry");
-			forumUser.setUserPassword("test");
-			forumUserRepository.save(forumUser);
+			sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
+					" :<br>\n" + "<input type=\"text\" name=\"username\">\n" +
+					"<input type=\"text\" name=\"mail\">\n" +
+					"<input type=\"password\" name=\"password\">\n" +
+					"<input type=\"submit\">\n" +
+					"</form>");
 		}
 		//sb.append(pageRepo.findByInstanceAndEndpoint(instanceid,endpoint).getContent());
-		sb.append("<form method=\"POST\" action=\"\">\n" + " Enter something " +
-		" :<br>\n" + "<input type=\"text\" name=\"content\">\n" + "<input type=\"submit\">\n" +
-		"</form>");
+
 		sb.append("</div></div>");
 
 
