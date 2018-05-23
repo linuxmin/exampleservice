@@ -1,5 +1,6 @@
 package org.omilab.services.exampleservice.rest;
 
+import org.omilab.services.exampleservice.model.GenericRequest;
 import org.omilab.services.exampleservice.model.GenericServiceContent;
 import org.omilab.services.exampleservice.repo.PageRepository;
 import org.omilab.services.exampleservice.service.InstanceMgmtService;
@@ -35,20 +36,30 @@ public final class PSMConnectorView {
 	@Consumes("application/json")
 	public GenericServiceContent processRequest(final @PathParam("instanceid") Long instanceid,
 												final @PathParam("endpoint") String endpoint,
-												final @Context HttpServletRequest servletRequest) {
+												final @Context HttpServletRequest servletRequest,
+												final GenericRequest request)
+	{
 
-
-
-
+		servletRequest.getSession().getAttribute("content").toString();
+		request.getParams().get("content");
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
 			return new GenericServiceContent("Not allowed!");
 
+
+
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<div class=\"panel panel-default\"><div class=\"panel-body\">");
-		sb.append(pageRepo.findByInstanceAndEndpoint(instanceid,endpoint).getContent());
+		if(request.getParams().get("content") !=null){
+			sb.append(request.getParams().get("content"));
+		}
+		//sb.append(pageRepo.findByInstanceAndEndpoint(instanceid,endpoint).getContent());
+		sb.append("<form method=\"POST\" action=\"\">\n" + " Enter something " +
+		" :<br>\n" + "<input type=\"text\" name=\"content\">\n" + "<input type=\"submit\">\n" +
+		"</form>");
 		sb.append("</div></div>");
-		
-		return new GenericServiceContent(sb.toString(), new HashMap<String,String>());
+
+
+		return new GenericServiceContent(sb.toString());
 	}
 
 
