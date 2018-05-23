@@ -71,7 +71,7 @@ public final class PSMConnectorView {
 						"<input type=\"submit\">\n" +
 						"</form>");
 			}catch(Exception e){
-				sb.append("Username existiert bereits");
+				sb.append("Username existiert bereits Kollege!");
 				sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
 						" :<br>\n" + "<input type=\"text\" name=\"username\">\n" +
 						"<input type=\"text\" name=\"mail\">\n" +
