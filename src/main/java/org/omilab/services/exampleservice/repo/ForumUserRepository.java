@@ -1,5 +1,6 @@
 package org.omilab.services.exampleservice.repo;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import org.omilab.services.exampleservice.model.ForumUser;
 import org.omilab.services.exampleservice.model.Page;
 import org.springframework.data.jpa.repository.Query;
@@ -13,5 +14,5 @@ public interface ForumUserRepository extends Repository<ForumUser, Integer> {
 
     public ForumUser findByUserName(String userName);
 
-    ForumUser save(ForumUser f);
+    ForumUser save(ForumUser f) throws MySQLIntegrityConstraintViolationException;
 }

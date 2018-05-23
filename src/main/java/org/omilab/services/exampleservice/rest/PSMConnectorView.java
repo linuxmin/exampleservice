@@ -1,5 +1,6 @@
 package org.omilab.services.exampleservice.rest;
 
+import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import org.omilab.services.exampleservice.model.ForumUser;
 import org.omilab.services.exampleservice.model.GenericRequest;
 import org.omilab.services.exampleservice.model.GenericServiceContent;
@@ -55,11 +56,15 @@ public final class PSMConnectorView {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<div class=\"panel panel-default\"><div class=\"panel-body\">");
 		if(request.getParams().get("username") !=null){
-			forumUser.setUserData(request.getParams().get("username"),
-					request.getParams().get("password"),
-					request.getParams().get("mail"));
-			forumUserRepository.save(forumUser);
-			sb.append(forumUser.getUserName());
+			try {
+				forumUser.setUserData(request.getParams().get("username"),
+						request.getParams().get("password"),
+						request.getParams().get("mail"));
+				forumUserRepository.save(forumUser);
+				sb.append(forumUser.getUserName());
+			}catch(MySQLIntegrityConstraintViolationException e){
+				sb.append("Username existiert bereits");
+			}
 		}else{
 			sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
 					" :<br>\n" + "<input type=\"text\" name=\"username\">\n" +
