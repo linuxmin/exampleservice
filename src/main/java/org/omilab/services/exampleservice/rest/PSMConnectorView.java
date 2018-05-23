@@ -1,7 +1,9 @@
 package org.omilab.services.exampleservice.rest;
 
+import org.omilab.services.exampleservice.model.ForumUser;
 import org.omilab.services.exampleservice.model.GenericRequest;
 import org.omilab.services.exampleservice.model.GenericServiceContent;
+import org.omilab.services.exampleservice.repo.ForumUserRepository;
 import org.omilab.services.exampleservice.repo.PageRepository;
 import org.omilab.services.exampleservice.service.InstanceMgmtService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,13 +22,15 @@ import java.util.Map;
 @Path("/view")
 public final class PSMConnectorView {
 
-	private final PageRepository pageRepo;
+//	private final PageRepository pageRepo;
 
+	private final ForumUserRepository forumUserRepository;
 	private final InstanceMgmtService instanceMgmtService;
 
 	@Autowired
-	public PSMConnectorView(PageRepository pageRepo, InstanceMgmtService instanceMgmtService) {
-		this.pageRepo = pageRepo;
+	public PSMConnectorView(ForumUserRepository forumUserRepository, InstanceMgmtService instanceMgmtService) {
+		//this.pageRepo = pageRepo;
+		this.forumUserRepository = forumUserRepository;
 		this.instanceMgmtService = instanceMgmtService;
 	}
 
@@ -40,6 +44,7 @@ public final class PSMConnectorView {
 												final GenericRequest request)
 	{
 
+		ForumUser forumUser = new ForumUser();
 	//	servletRequest.getSession().getAttribute("content").toString();
 		request.getParams().get("content");
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
@@ -50,7 +55,13 @@ public final class PSMConnectorView {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<div class=\"panel panel-default\"><div class=\"panel-body\">");
 		if(request.getParams().get("content") !=null){
-			sb.append(request.getParams().get("content"));
+			forumUser =  forumUserRepository.findByUserId(1);
+			sb.append(forumUser.getUserName());
+		}else{
+
+			forumUser.setUserName("harry");
+			forumUser.setUserPassword("test");
+			forumUserRepository.save(forumUser);
 		}
 		//sb.append(pageRepo.findByInstanceAndEndpoint(instanceid,endpoint).getContent());
 		sb.append("<form method=\"POST\" action=\"\">\n" + " Enter something " +
