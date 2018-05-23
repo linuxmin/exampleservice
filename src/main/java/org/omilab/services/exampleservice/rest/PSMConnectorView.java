@@ -55,7 +55,7 @@ public final class PSMConnectorView {
 		final StringBuilder sb = new StringBuilder();
 		sb.append("<div class=\"panel panel-default\"><div class=\"panel-body\">");
 		if(request.getParams().get("content") !=null){
-			forumUser =  forumUserRepository.findByUserId(1);
+			forumUser =  forumUserRepository.findByUserName(request.getParams().get("content"));
 			sb.append(forumUser.getUserName());
 		}else{
 

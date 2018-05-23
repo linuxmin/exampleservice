@@ -7,10 +7,11 @@ import org.springframework.data.repository.Repository;
 
 public interface ForumUserRepository extends Repository<ForumUser, Integer> {
 
- //   ForumUser findById(Integer id);
 
   //  @Query("select f from ForumUser f join f.instance i where i.id=?1 and f.endpoint=?2")
     public ForumUser findByUserId(Integer userId);
+
+    public ForumUser findByUserName(String userName);
 
     ForumUser save(ForumUser f);
 }
