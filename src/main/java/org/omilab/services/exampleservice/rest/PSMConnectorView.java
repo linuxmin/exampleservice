@@ -63,7 +63,7 @@ public final class PSMConnectorView {
 						request.getParams().get("mail"));
 				forumUserRepository.save(forumUser);
 				sb.append(forumUser.getUserName());
-			}catch(ConstraintViolationException e){
+			}catch(Exception e){
 				sb.append("Username existiert bereits");
 			}
 		}else{
