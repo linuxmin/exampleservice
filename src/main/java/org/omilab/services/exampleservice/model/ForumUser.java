@@ -1,17 +1,16 @@
 package org.omilab.services.exampleservice.model;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
+ @Table(name = "forumuser",
+         uniqueConstraints = @UniqueConstraint(name="uname", columnNames = "user_name"))
 public class ForumUser {
     @Id
     @GeneratedValue
     private Integer userId;
 
-    @Column(unique = true)
+    @Column
     private String userName;
 
     @Column
