@@ -65,6 +65,12 @@ public final class PSMConnectorView {
 				sb.append(forumUser.getUserName());
 			}catch(Exception e){
 				sb.append("Username existiert bereits");
+				sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
+						" :<br>\n" + "<input type=\"text\" name=\"username\">\n" +
+						"<input type=\"text\" name=\"mail\">\n" +
+						"<input type=\"password\" name=\"password\">\n" +
+						"<input type=\"submit\">\n" +
+						"</form>");
 			}
 		}else{
 			sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
