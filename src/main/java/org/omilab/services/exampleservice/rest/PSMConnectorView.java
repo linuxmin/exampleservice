@@ -40,7 +40,7 @@ public final class PSMConnectorView {
 												final GenericRequest request)
 	{
 
-		servletRequest.getSession().getAttribute("content").toString();
+	//	servletRequest.getSession().getAttribute("content").toString();
 		request.getParams().get("content");
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
 			return new GenericServiceContent("Not allowed!");
