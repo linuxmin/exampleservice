@@ -158,14 +158,16 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"javascript:submitform('logout');\">Logout</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
-                "  <div class=\"input-group\">\n" +
-                "    <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n" +
-                "    <div class=\"input-group-btn\">\n" +
-                "      <button class=\"btn btn-default\" type=\"submit\">\n" +
-                "        <i class=\"glyphicon glyphicon-search\"></i>\n" +
-                "      </button>\n" +
-                "    </div>\n" +
-                "  </div>"+
+                "  <form class=\"navbar-form navbar-left\" action=\"/action_page.php\">\n" +
+                "      <div class=\"input-group\">\n" +
+                "        <input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"search\">\n" +
+                "        <div class=\"input-group-btn\">\n" +
+                "          <button class=\"btn btn-default\" type=\"submit\">\n" +
+                "            <i class=\"glyphicon glyphicon-search\"></i>\n" +
+                "          </button>\n" +
+                "        </div>\n" +
+                "      </div>\n" +
+                "    </form>"+
                 "</nav>" + "<form class=\"form-inline\" name=\"loginform\" method=\"post\" action=\"\">\n" +
                 "<input type=\"hidden\" name=\"login\" value=\"" + userId + "\" />" +
                 "<input type=\"hidden\" id=\"navform\" name=\"navinput\" value=\"true\" /></form>";
