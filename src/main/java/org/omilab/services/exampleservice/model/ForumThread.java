@@ -1,6 +1,7 @@
 package org.omilab.services.exampleservice.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "forumthread",
@@ -17,7 +18,18 @@ public class ForumThread {
     @ManyToOne
     private ForumUser forumUser;
 
+    @OneToMany(mappedBy = "forumThread", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<ForumPosting> forumPostings;
+
     public ForumThread(){}
+
+    public List<ForumPosting> getForumPostings() {
+        return forumPostings;
+    }
+
+    public void setForumPostings(List<ForumPosting> forumPostings) {
+        this.forumPostings = forumPostings;
+    }
 
     public Integer getThreadId() {
         return threadId;

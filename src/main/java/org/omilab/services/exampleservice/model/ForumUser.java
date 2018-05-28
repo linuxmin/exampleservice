@@ -23,6 +23,9 @@ public class ForumUser {
     @OneToMany(mappedBy = "forumUser", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<ForumThread> forumThreads;
 
+    @OneToMany(mappedBy = "forumUser", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<ForumPosting> forumPostings;
+
     public ForumUser(){}
 
     public List<ForumThread> getForumThreads() {

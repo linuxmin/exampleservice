@@ -1,17 +1,27 @@
 package org.omilab.services.exampleservice.model;
 
+import javax.persistence.*;
+
+@Entity
 public class ForumPosting {
 
+    @Id
+    @GeneratedValue
     private Integer postingId;
 
+    @Column
     private String postingContent;
 
+    @ManyToOne
     private ForumThread forumThread;
 
+    @ManyToOne
     private ForumUser forumUser;
 
 
     public ForumPosting (){}
+
+
 
     public Integer getPostingId() {
         return postingId;
