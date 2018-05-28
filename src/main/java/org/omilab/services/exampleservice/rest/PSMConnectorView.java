@@ -72,6 +72,15 @@ public final class PSMConnectorView {
         	forumUser = forumUserRepository.findByUserId(Integer.parseInt(request.getParams().get("login")));
         	sb.append(pageBuilder.loggedInNav(forumUser.getUserName(),forumUser.getUserId()));
 
+        	if(request.getParams().get("navinput").contains("thread")){
+        		String thread = request.getParams().get("navinput");
+        		String delimiter = "[0-9]";
+        		String[] tokens = thread.split(delimiter);
+        		Integer forumId = Integer.parseInt(tokens[0]);
+        		forumThread = forumThreadRepository.findByThreadId(forumId);
+        		sb.append(pageBuilder.showThread(forumThread));
+			}
+
 			if(request.getParams().get("threadtitle") != null){
 				sb.append("<div class=\"container\"");
 				forumThread.setThreadTitle(request.getParams().get("threadtitle"));
@@ -83,7 +92,7 @@ public final class PSMConnectorView {
 				forumPosting.setPostingContent(request.getParams().get("threadposting"));
 				forumPosting.setForumUser(forumUser);
 				forumPostingRepository.save(forumPosting);
-				sb.append(pageBuilder.showThread(request.getParams().get("threadtitle"),request.getParams().get("threadposting")));
+				sb.append(pageBuilder.showThread(forumThread));
 			}
 
         	if(request.getParams().get("navinput").equalsIgnoreCase("forum")){

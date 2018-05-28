@@ -10,6 +10,8 @@ public interface ForumThreadRepository extends Repository<ForumThread, Integer> 
 
     public ForumThread findByThreadTitle(String forumThreadTitle);
 
+    public ForumThread findByThreadId(Integer forumThreadId);
+
     List<ForumThread> findAll();
 
     ForumThread save(ForumThread forumThread);

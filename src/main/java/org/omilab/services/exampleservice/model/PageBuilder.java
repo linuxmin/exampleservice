@@ -6,9 +6,9 @@ public class PageBuilder {
         return " <a href=\"javascript:submitform('thread"+threadId+"');\" class=\"list-group-item list-group-item-action\">" + threadtitle +" </a>";
     }
 
-    public String showThread(String threadtitle, String threadposting){
+    public String showThread(ForumThread forumThread){
         return "<div class=\"row\">\n" +
-                "  <div class=\"col\">" + threadposting + "</div>\n" +
+                "  <div class=\"col\">" + forumThread.getForumPostings().get(0) + "</div>\n" +
                 "</div>";
     }
 
