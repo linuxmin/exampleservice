@@ -22,24 +22,24 @@ public class PageBuilder {
                 "  <h1>Enterprise IS Forum</h1>\n" +
                 "  <p>Discuss the important things of life!</p> \n" +
                 "</div>" +
-                "<nav class=\"navbar navbar-expand-sm bg-dark navbar-dark\">\n" +
+                "<nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n" +
                 "  <ul class=\"navbar-nav\">\n" +
                 "    <li class=\"nav-item active\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Active</a>\n" +
+                "      <a class=\"nav-link\" href=\"#\">Home</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Link</a>\n" +
+                "      <a class=\"nav-link\" href=\"#\">Forum</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Link</a>\n" +
+                "      <a class=\"nav-link\" href=\"#\">Register</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\n" +
+                "      <a class=\"nav-link disabled\" href=\"#\">My Profile</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
                 " <form class=\"form-inline\" action=\"/action_page.php\">\n" +
                 "    <input class=\"form-control mr-sm-2\" type=\"text\" id=\"user\" placeholder=\"Username\">\n" +
-                "    <input class=\"form-control mr-sm-2\" type=\"passsword\" id=\"password\" placeholder=\"Password\">\n" +
+                "    <input class=\"form-control mr-sm-2\" type=\"password\" id=\"password\" placeholder=\"Password\">\n" +
                 "    <button class=\"btn btn-success\" type=\"submit\">Login</button>\n" +
                 "  </form>" +
                 "</nav>";
