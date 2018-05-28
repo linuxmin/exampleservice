@@ -56,7 +56,7 @@ public final class PSMConnectorView {
 
 
 		final StringBuilder sb = new StringBuilder();
-		System.out.println(request.getParams().get("navform"));
+		System.out.println(request.getParams().get("navinput"));
 
         if(request.getParams().get("login") !=null){
         	sb.append(pageBuilder.loggdInNav("huhu"));
