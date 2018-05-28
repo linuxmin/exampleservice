@@ -48,13 +48,9 @@ public final class PSMConnectorView {
 												final @Context HttpServletRequest servletRequest,
 												final GenericRequest request)
 	{
-	    boolean loggedIn;
 		ForumUser forumUser = new ForumUser();
 
 
-
-	//	servletRequest.getSession().getAttribute("content").toString();
-		//request.getParams().get("content");
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
 			return new GenericServiceContent("Not allowed!");
 
@@ -63,8 +59,7 @@ public final class PSMConnectorView {
 		System.out.println(servletRequest.getSession().getAttribute("login"));
 
         if(servletRequest.getSession().getAttribute("login") !=null){
-            //request.getParams().put("login","true");
-            sb.append(pageBuilder.loggdInNav("huhu"));
+        	sb.append(pageBuilder.loggdInNav("huhu"));
         }else {
             if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
 
@@ -75,11 +70,6 @@ public final class PSMConnectorView {
                         );
                 if(forumUser != null) {
                     sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
-                    //request.getParams().put("login","true");
-                    //request.getParams().put("user",request.getParams().get("user"));
-                    //request.getParams().put("password",request.getParams().get("password"));
-					servletRequest.getSession().setAttribute("login", "true");
-
                 }else{
                     sb.append(pageBuilder.notLoggedInNav());
                 }
