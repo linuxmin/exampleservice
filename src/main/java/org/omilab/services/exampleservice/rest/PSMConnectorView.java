@@ -85,11 +85,12 @@ public final class PSMConnectorView {
                     sb.append(pageBuilder.notLoggedInNav());
                 }
             }else {
+				sb.append(pageBuilder.notLoggedInNav());
 				if(request.getParams().get("threadtitle") != null){
 					sb.append("<div class=\"container\"");
 					sb.append(pageBuilder.showThread("dsf",request.getParams().get("threadposting")));
 				}
-                sb.append(pageBuilder.notLoggedInNav());
+
             }
         }
         sb.append("</div>");
