@@ -21,6 +21,7 @@ public class PageBuilder {
                 "    </div>\n" +
                 "   <input type=\"hidden\" name=\"login\" value=\"true\" />" +
                 "   <input type=\"hidden\" name=\"user\" value=\""+ username + "\" />" +
+                "<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\"true\" />" +
                 "    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n" +
                 "  </form>";
     }
