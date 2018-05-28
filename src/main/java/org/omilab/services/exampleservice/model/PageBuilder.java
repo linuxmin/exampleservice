@@ -32,9 +32,8 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"?nav=profile\">My Profile</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
-                "<form class=\"form-inline\" id=\"login1\" method=\"post\" action=\"\">\n" +
-                "<input type=\"hidden\" name=\"login\" value=\"true\" /></form>" +
-                "</nav>";
+                "</nav>" + "<form class=\"form-inline\" id=\"login1\" method=\"post\" action=\"\">\n" +
+                "<input type=\"hidden\" name=\"login\" value=\"true\" /></form>";
 
 
     }
