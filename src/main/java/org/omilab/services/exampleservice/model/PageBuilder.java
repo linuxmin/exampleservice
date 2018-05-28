@@ -40,7 +40,8 @@ public class PageBuilder {
                 "    </li>\n" +
                 "  </ul>\n" +
                 "</nav>" + "<form class=\"form-inline\" name=\"loginform\" method=\"post\" action=\"\">\n" +
-                "<input type=\"hidden\" name=\"login\" value=\"true\"/></form>";
+                "<input type=\"hidden\" name=\"login\" value=\"true\" />" +
+                "<input type=\"hidden\" name=\"navform\" id=\"navinput\" value=\"forum\" /></form>";
 
 
     }
