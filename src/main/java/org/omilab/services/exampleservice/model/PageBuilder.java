@@ -124,6 +124,14 @@ public class PageBuilder {
                 "  document.loginform.submit();\n" +
                 "}\n" +
                 "</script>\n" +
+                "<style>\n" +
+                ".list-group{ max-height: 300px;\n" +
+                "    margin-bottom: 10px;\n" +
+                "    overflow:scroll;\n" +
+                "    -webkit-overflow-scrolling: touch;}" +
+                "h1 {color:red;}\n" +
+                "p {color:blue;}\n" +
+                "</style>" +
                 "</head>\n" +
                 "<body data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">" +
                 "\n" +
