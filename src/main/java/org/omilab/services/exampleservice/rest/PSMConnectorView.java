@@ -52,6 +52,7 @@ public final class PSMConnectorView {
 		ForumUser forumUser = new ForumUser();
 
 
+
 	//	servletRequest.getSession().getAttribute("content").toString();
 		//request.getParams().get("content");
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
@@ -61,9 +62,9 @@ public final class PSMConnectorView {
 		final StringBuilder sb = new StringBuilder();
 		System.out.println(request.getParams().get("login"));
 
-        if(request.getParams().get("login") != null){
-            request.getParams().put("login","true");
-            sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
+        if(servletRequest.getSession().getAttribute("login") !=null){
+            //request.getParams().put("login","true");
+            sb.append(pageBuilder.loggdInNav("huhu"));
         }else {
             if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
 
@@ -74,9 +75,10 @@ public final class PSMConnectorView {
                         );
                 if(forumUser != null) {
                     sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
-                    request.getParams().put("login","true");
-                    request.getParams().put("user",request.getParams().get("user"));
+                    //request.getParams().put("login","true");
+                    //request.getParams().put("user",request.getParams().get("user"));
                     //request.getParams().put("password",request.getParams().get("password"));
+					servletRequest.getSession().setAttribute("login", "true");
 
                 }else{
                     sb.append(pageBuilder.notLoggedInNav());
@@ -85,9 +87,7 @@ public final class PSMConnectorView {
                 sb.append(pageBuilder.notLoggedInNav());
             }
         }
-		GenericServiceContent gc = new GenericServiceContent(sb.toString());
-        gc.getSubmenu().put("login","true");
-		//return new GenericServiceContent(sb.toString());
-		return gc;
+		return new GenericServiceContent(sb.toString());
+
 	}
 }
