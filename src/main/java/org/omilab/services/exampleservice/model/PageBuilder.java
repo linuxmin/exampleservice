@@ -63,7 +63,7 @@ public class PageBuilder {
                 "\n" +
                 "<div class=\"jumbotron text-center\">\n" +
                 "  <h1>Enterprise IS Forum</h1>\n" +
-                "  <p>Discuss the important things of life!</p> \n" +
+                "  <p>Discuss the important things of Life!</p> \n" +
                 "</div>" +
                 "<nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n" +
                 "  <ul class=\"navbar-nav\">\n" +

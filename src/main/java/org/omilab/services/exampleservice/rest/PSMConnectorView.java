@@ -49,7 +49,6 @@ public final class PSMConnectorView {
 	{
 		ForumUser forumUser = new ForumUser();
 
-
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
 			return new GenericServiceContent("Not allowed!");
 
