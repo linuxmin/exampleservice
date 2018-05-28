@@ -13,6 +13,12 @@ public class PageBuilder {
                 "  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n" +
                 "  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\"></script>\n" +
                 "  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js\"></script>\n" +
+                "<script type=\"text/javascript\">\n" +
+                "function submitform()\n" +
+                "{\n" +
+                "  document.loginform.submit();\n" +
+                "}\n" +
+                "</script>\n" +
                 "</head>\n" +
                 "<body>\n" +
                 "\n" +
@@ -26,13 +32,13 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"?nav=home\">Home</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"#\" onclick=\"$(this).closest('form').submit();\">submit form>Forum</a>\n" +
+                "      <a class=\"nav-link\" href=\"javascript: submitform()\">Forum</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
                 "      <a class=\"nav-link\" href=\"?nav=profile\">My Profile</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
-                "</nav>" + "<form class=\"form-inline\" id=\"login1\" method=\"post\" action=\"\">\n" +
+                "</nav>" + "<form class=\"form-inline\" id=\"loginform\" method=\"post\" action=\"\">\n" +
                 "<input type=\"hidden\" name=\"login\" value=\"true\" /></form>";
 
 
