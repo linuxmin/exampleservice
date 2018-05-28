@@ -51,15 +51,18 @@ public final class PSMConnectorView {
 
 		ForumUser forumUser = new ForumUser();
 	//	servletRequest.getSession().getAttribute("content").toString();
-		request.getParams().get("content");
+		//request.getParams().get("content");
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
 			return new GenericServiceContent("Not allowed!");
 
 
 
 		final StringBuilder sb = new StringBuilder();
-		sb.append(pageBuilder.buildMainSite());
-
+		if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
+		    sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
+        }else {
+            sb.append(pageBuilder.notLoggedInNav());
+        }
 		return new GenericServiceContent(sb.toString());
 	}
 
