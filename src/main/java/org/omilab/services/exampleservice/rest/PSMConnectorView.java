@@ -62,7 +62,7 @@ public final class PSMConnectorView {
 		final StringBuilder sb = new StringBuilder();
 		System.out.println(request.getParams().get("navinput"));
 
-		sb.append("<div class=\"container\"");
+
 
         if(request.getParams().get("login") !=null && !request.getParams().get("navinput").equalsIgnoreCase("logout")){
         	sb.append(pageBuilder.loggdInNav("hahaha"));
@@ -86,6 +86,7 @@ public final class PSMConnectorView {
                 }
             }else {
 				if(request.getParams().get("threadtitle") != null){
+					sb.append("<div class=\"container\"");
 					sb.append(pageBuilder.showThread("dsf",request.getParams().get("threadposting")));
 				}
                 sb.append(pageBuilder.notLoggedInNav());
