@@ -58,6 +58,7 @@ public final class PSMConnectorView {
 
         if(request.getParams().get("login") !=null && !request.getParams().get("navinput").equalsIgnoreCase("logout")){
         	sb.append(pageBuilder.loggdInNav("hahaha"));
+        	sb.append(pageBuilder.homeSite());
         }else {
             if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
 
