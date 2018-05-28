@@ -56,7 +56,7 @@ public final class PSMConnectorView {
 		final StringBuilder sb = new StringBuilder();
 		System.out.println(request.getParams().get("navinput"));
 
-        if(request.getParams().get("login") !=null && request.getParams().get("logout") == null){
+        if(request.getParams().get("login") !=null && !request.getParams().get("navinput").equalsIgnoreCase("logout")){
         	sb.append(pageBuilder.loggdInNav("hahaha"));
         }else {
             if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
