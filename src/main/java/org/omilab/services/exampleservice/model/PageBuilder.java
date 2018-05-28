@@ -73,7 +73,7 @@ public class PageBuilder {
                 "      <a class=\"nav-link disabled\" href=\"#\">My Profile</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
-                " <form class=\"form-inline\" action=\"\">\n" +
+                " <form class=\"form-inline\" action=\"\" method=\"post\">\n" +
                 "    <input class=\"form-control mr-sm-2\" type=\"text\" name=\"user\" placeholder=\"Username\">\n" +
                 "    <input class=\"form-control mr-sm-2\" type=\"password\" name=\"password\" placeholder=\"Password\">\n" +
                 "    <button class=\"btn btn-success\" type=\"submit\">Login</button>\n" +
