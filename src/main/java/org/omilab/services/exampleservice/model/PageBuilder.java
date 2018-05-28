@@ -21,6 +21,7 @@ public class PageBuilder {
                 "<div class=\"jumbotron text-center\">\n" +
                 "  <h1>Enterprise IS Forum</h1>\n" +
                 "  <p>Discuss the important things of life!</p> \n" +
+                "</div>" +
                 "<nav class=\"navbar navbar-expand-sm bg-dark navbar-dark\">\n" +
                 "  <ul class=\"navbar-nav\">\n" +
                 "    <li class=\"nav-item active\">\n" +
