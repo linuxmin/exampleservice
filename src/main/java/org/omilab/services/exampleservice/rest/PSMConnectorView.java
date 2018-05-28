@@ -60,6 +60,7 @@ public final class PSMConnectorView {
 		final StringBuilder sb = new StringBuilder();
 
         if(request.getParams().get("login") != null){
+            request.getParams().put("login","true");
             sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
         }else {
             if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
@@ -73,6 +74,7 @@ public final class PSMConnectorView {
                     sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
                     request.getParams().put("login","true");
                     request.getParams().put("user",request.getParams().get("user"));
+                    //request.getParams().put("password",request.getParams().get("password"));
 
                 }else{
                     sb.append(pageBuilder.notLoggedInNav());
