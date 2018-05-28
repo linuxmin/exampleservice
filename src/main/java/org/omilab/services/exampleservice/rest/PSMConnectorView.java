@@ -100,7 +100,7 @@ public final class PSMConnectorView {
         		sb.append(pageBuilder.createThread(forumUser));
 				sb.append("<div class=\"list-group\">");
 				for(ForumThread f : forumThreadRepository.findAll()){
-					sb.append(pageBuilder.showForum(f.getThreadTitle(), f.getThreadId()));
+					sb.append(pageBuilder.showForum(f));
 				}
 				sb.append("</div>");
 			}
