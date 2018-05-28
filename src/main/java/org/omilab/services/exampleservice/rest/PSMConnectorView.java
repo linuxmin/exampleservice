@@ -58,6 +58,7 @@ public final class PSMConnectorView {
 
 
 		final StringBuilder sb = new StringBuilder();
+		System.out.println("hallo");
 
         if(request.getParams().get("login") != null){
             request.getParams().put("login","true");
