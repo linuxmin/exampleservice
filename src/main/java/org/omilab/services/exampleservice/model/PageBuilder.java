@@ -8,7 +8,7 @@ public class PageBuilder {
 
     public String showThread(ForumThread forumThread){
         return "<div class=\"row\">\n" +
-                "  <div class=\"col\">" + forumThread.getForumPostings().get(0) + "</div>\n" +
+                "  <div class=\"col\">" + forumThread.getForumPostings().get(0).getPostingContent() + "</div>\n" +
                 "</div>";
     }
 
