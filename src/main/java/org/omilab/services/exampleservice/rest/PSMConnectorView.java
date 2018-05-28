@@ -66,9 +66,7 @@ public final class PSMConnectorView {
 
         if(request.getParams().get("login") !=null && !request.getParams().get("navinput").equalsIgnoreCase("logout")){
         	sb.append(pageBuilder.loggdInNav("hahaha"));
-			if(request.getParams().get("threadtitle") != null){
-				sb.append(pageBuilder.showThread("dsf",request.getParams().get("threadcontent")));
-			}
+
         	if(request.getParams().get("navinput").equalsIgnoreCase("forum")){
         		sb.append(pageBuilder.createThread("Benjamin"));
 			}
@@ -87,6 +85,9 @@ public final class PSMConnectorView {
                     sb.append(pageBuilder.notLoggedInNav());
                 }
             }else {
+				if(request.getParams().get("threadtitle") != null){
+					sb.append(pageBuilder.showThread("dsf",request.getParams().get("threadcontent")));
+				}
                 sb.append(pageBuilder.notLoggedInNav());
             }
         }
