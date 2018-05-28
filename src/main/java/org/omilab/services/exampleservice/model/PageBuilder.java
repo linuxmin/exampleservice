@@ -16,7 +16,7 @@ public class PageBuilder {
                 "<script type=\"text/javascript\">\n" +
                 "function submitform(p)\n" +
                 "{\n" +
-                " document.getElementById('navform').value = p; " +
+                " document.getElementById(\"navform\").value = p; " +
                 "  document.loginform.submit();\n" +
                 "}\n" +
                 "</script>\n" +
