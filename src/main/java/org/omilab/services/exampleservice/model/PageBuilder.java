@@ -2,6 +2,10 @@ package org.omilab.services.exampleservice.model;
 
 public class PageBuilder {
 
+    public String showThreadNavigation(){
+        return "";
+    }
+
     public String showForum(ForumThread forumThread){
         return " <a href=\"javascript:submitform('thread"+forumThread.getThreadId()+"');\" class=\"list-group-item list-group-item-action\">" + forumThread.getThreadTitle() +"<span class=\"badge badge-primary badge-pill\">"+forumThread.getForumPostings().size() + "</span></a>";
     }
@@ -154,6 +158,14 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"javascript:submitform('logout');\">Logout</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
+                "  <div class=\"input-group\">\n" +
+                "    <input type=\"text\" class=\"form-control\" placeholder=\"Search\">\n" +
+                "    <div class=\"input-group-btn\">\n" +
+                "      <button class=\"btn btn-default\" type=\"submit\">\n" +
+                "        <i class=\"glyphicon glyphicon-search\"></i>\n" +
+                "      </button>\n" +
+                "    </div>\n" +
+                "  </div>"+
                 "</nav>" + "<form class=\"form-inline\" name=\"loginform\" method=\"post\" action=\"\">\n" +
                 "<input type=\"hidden\" name=\"login\" value=\"" + userId + "\" />" +
                 "<input type=\"hidden\" id=\"navform\" name=\"navinput\" value=\"true\" /></form>";
