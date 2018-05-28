@@ -50,11 +50,12 @@ public final class PSMConnectorView {
 	{
 	    boolean loggedIn;
 		ForumUser forumUser = new ForumUser();
+
+
 	//	servletRequest.getSession().getAttribute("content").toString();
 		//request.getParams().get("content");
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
 			return new GenericServiceContent("Not allowed!");
-
 
 
 		final StringBuilder sb = new StringBuilder();
@@ -84,6 +85,9 @@ public final class PSMConnectorView {
                 sb.append(pageBuilder.notLoggedInNav());
             }
         }
-		return new GenericServiceContent(sb.toString());
+		GenericServiceContent gc = new GenericServiceContent(sb.toString());
+        gc.getSubmenu().put("login","true");
+		//return new GenericServiceContent(sb.toString());
+		return gc;
 	}
 }
