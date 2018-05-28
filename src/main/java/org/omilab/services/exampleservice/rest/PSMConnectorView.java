@@ -5,6 +5,7 @@ import org.hibernate.exception.ConstraintViolationException;
 import org.omilab.services.exampleservice.model.ForumUser;
 import org.omilab.services.exampleservice.model.GenericRequest;
 import org.omilab.services.exampleservice.model.GenericServiceContent;
+import org.omilab.services.exampleservice.model.PageBuilder;
 import org.omilab.services.exampleservice.repo.ForumUserRepository;
 import org.omilab.services.exampleservice.repo.PageRepository;
 import org.omilab.services.exampleservice.service.InstanceMgmtService;
@@ -28,12 +29,14 @@ public final class PSMConnectorView {
 
 	private final ForumUserRepository forumUserRepository;
 	private final InstanceMgmtService instanceMgmtService;
+	private final PageBuilder pageBuilder = new PageBuilder();
 
 	@Autowired
 	public PSMConnectorView(ForumUserRepository forumUserRepository, InstanceMgmtService instanceMgmtService) {
 		//this.pageRepo = pageRepo;
 		this.forumUserRepository = forumUserRepository;
 		this.instanceMgmtService = instanceMgmtService;
+
 	}
 
 	@POST
@@ -55,42 +58,7 @@ public final class PSMConnectorView {
 
 
 		final StringBuilder sb = new StringBuilder();
-		sb.append("<div class=\"panel panel-default\"><div class=\"panel-body\">");
-		if(request.getParams().get("login") !=null)
-			sb.append(request.getParams().get("login"));
-		if(request.getParams().get("username") !=null){
-			try {
-				forumUser.setUserData(request.getParams().get("username"),
-						request.getParams().get("password"),
-						request.getParams().get("mail"));
-				forumUserRepository.save(forumUser);
-				sb.append(forumUser.getUserName());
-				sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
-						" :<br>\n" + "<input type=\"radio\" name=\"login\" " +
-						"value=\"" + forumUser.getUserMail() + "\" >\n" +
-						"<input type=\"submit\">\n" +
-						"</form>");
-			}catch(Exception e){
-				sb.append("Username existiert bereits");
-				sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
-						" :<br>\n" + "<input type=\"text\" name=\"username\">\n" +
-						"<input type=\"text\" name=\"mail\">\n" +
-						"<input type=\"password\" name=\"password\">\n" +
-						"<input type=\"submit\">\n" +
-						"</form>");
-			}
-		}else{
-			sb.append("<form method=\"POST\" action=\"\">\n" + " Username " +
-					" :<br>\n" + "<input type=\"text\" name=\"username\">\n" +
-					"<input type=\"text\" name=\"mail\">\n" +
-					"<input type=\"password\" name=\"password\">\n" +
-					"<input type=\"submit\">\n" +
-					"</form>");
-		}
-		//sb.append(pageRepo.findByInstanceAndEndpoint(instanceid,endpoint).getContent());
-
-		sb.append("</div></div>");
-
+		sb.append(pageBuilder.buildMainSite());
 
 		return new GenericServiceContent(sb.toString());
 	}
