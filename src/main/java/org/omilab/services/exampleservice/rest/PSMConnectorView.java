@@ -6,6 +6,7 @@ import org.omilab.services.exampleservice.model.ForumUser;
 import org.omilab.services.exampleservice.model.GenericRequest;
 import org.omilab.services.exampleservice.model.GenericServiceContent;
 import org.omilab.services.exampleservice.model.PageBuilder;
+import org.omilab.services.exampleservice.repo.ForumThreadRepository;
 import org.omilab.services.exampleservice.repo.ForumUserRepository;
 import org.omilab.services.exampleservice.repo.PageRepository;
 import org.omilab.services.exampleservice.service.InstanceMgmtService;
@@ -28,14 +29,19 @@ public final class PSMConnectorView {
 //	private final PageRepository pageRepo;
 
 	private final ForumUserRepository forumUserRepository;
+	private final ForumThreadRepository forumThreadRepository;
+
 	private final InstanceMgmtService instanceMgmtService;
 	private final PageBuilder pageBuilder = new PageBuilder();
 
 	@Autowired
-	public PSMConnectorView(ForumUserRepository forumUserRepository, InstanceMgmtService instanceMgmtService) {
+	public PSMConnectorView(ForumUserRepository forumUserRepository,
+							ForumThreadRepository forumThreadRepository,
+							InstanceMgmtService instanceMgmtService) {
 		//this.pageRepo = pageRepo;
 		this.forumUserRepository = forumUserRepository;
 		this.instanceMgmtService = instanceMgmtService;
+		this.forumThreadRepository = forumThreadRepository;
 
 	}
 	@POST

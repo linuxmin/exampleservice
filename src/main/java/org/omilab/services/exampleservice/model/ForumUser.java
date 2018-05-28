@@ -1,6 +1,7 @@
 package org.omilab.services.exampleservice.model;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
  @Table(name = "forumuser",
@@ -16,9 +17,21 @@ public class ForumUser {
     @Column
     private String userPassword;
 
-    @Column String userMail;
+    @Column
+    private String userMail;
+
+    @OneToMany(mappedBy = "forumuser", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    private List<ForumThread> forumThreads;
 
     public ForumUser(){}
+
+    public List<ForumThread> getForumThreads() {
+        return forumThreads;
+    }
+
+    public void setForumThreads(List<ForumThread> forumThreads) {
+        this.forumThreads = forumThreads;
+    }
 
     public void setUserData(String userName, String userPassword, String userMail){
         setUserName(userName);

@@ -2,6 +2,10 @@ package org.omilab.services.exampleservice.model;
 
 public class PageBuilder {
 
+    public String forumSite(){
+        return "";
+    }
+
     public String homeSite(){
         return "<div class=\"container\">\n" +
                 "    <div class=\"row\">\n" +
