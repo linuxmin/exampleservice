@@ -38,7 +38,7 @@ public final class PSMConnectorView {
 		this.instanceMgmtService = instanceMgmtService;
 
 	}
-
+//randombs
 	@POST
 	@Path("/{instanceid}/{endpoint}")
 	@Produces("application/json")
@@ -58,7 +58,7 @@ public final class PSMConnectorView {
 		System.out.println(request.getParams().get("navinput"));
 
         if(request.getParams().get("login") !=null){
-        	sb.append(pageBuilder.loggdInNav("huhu"));
+        	sb.append(pageBuilder.loggdInNav("hahaha"));
         }else {
             if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
 
