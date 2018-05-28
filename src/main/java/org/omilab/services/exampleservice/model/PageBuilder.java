@@ -8,7 +8,7 @@ public class PageBuilder {
         return "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
-                "  <title>Forum Serrvice</title>\n" +
+                "  <title>Forum Service</title>\n" +
                 "  <meta charset=\"utf-8\">\n" +
                 "  <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n" +
                 "  <link rel=\"stylesheet\" href=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css\">\n" +
@@ -21,13 +21,7 @@ public class PageBuilder {
                 "<div class=\"jumbotron text-center\">\n" +
                 "  <h1>Enterprise IS Forum</h1>\n" +
                 "  <p>Discuss the important things of life!</p> \n" +
-                "</div>" + "    <div class=\"row\">\n" +
-                "        <nav class=\"navbar navbar-default navbar-fixed-top\">\n" +
-                "            <div class=\"container-fluid\">\n" +
-                "                <div class=\"navbar-header\">\n" +
-                "                    <a class=\"navbar-brand\" href=\"#\">SKAB - Rent a Car!</a>\n" +
-                "                </div>\n" +
-                "                <div class=\"navbar-default\">\n" +
+                "</div>" + "         <div class=\"navbar-default\">\n" +
                 "                    <ul class=\"nav nav-pills\">\n" +
                 "                        <li><a href=\"index.php\">Home</a></li>\n" +
                 "                        <li><a  href=\"fahrzeugsuche.php\">Fahrzeugsuche</a></li>\n" +
@@ -43,10 +37,7 @@ public class PageBuilder {
                 "                            <button type=\"submit\" formmethod=\"post\" class=\"btn btn-default\">Login</button>\n" +
                 "                            <a href=\"register.html\">Registrierung</a>\n" +
                 "                        </form>\n" +
-                "                </div>\n" +
-                "            </div>\n" +
-                "        </nav>\n" +
-                "    </div>";
+                "                </div>";
 
     }
 
