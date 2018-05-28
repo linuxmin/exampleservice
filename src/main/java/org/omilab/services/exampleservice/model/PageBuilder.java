@@ -23,9 +23,9 @@ public class PageBuilder {
                 "      <label for=\"comment\">Comment:</label>" +
                 "      <textarea class=\"form-control\" rows=\"5\" id=\"threadpostingid\" name=\"threadposting\"></textarea>" +
                 "    </div>\n" +
-                "   <input type=\"hidden\" name=\"login\" value=\"true\" />" +
+                "   <input type=\"hidden\" name=\"login\" value=\"" + forumUser.getUserId() + "\" />" +
                 "   <input type=\"hidden\" name=\"user\" value=\""+ forumUser.getUserName() + "\" />" +
-                "<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\"" + forumUser.getUserId() + "\" />" +
+                "<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\"true\" />" +
                 "    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n" +
                 "  </form>";
     }
