@@ -18,21 +18,18 @@ public class PageBuilder {
                 "\n" +
                 "<div class=\"jumbotron text-center\">\n" +
                 "  <h1>Enterprise IS Forum</h1>\n" +
-                "  <p>Discuss the important things of life!" + userName + "</p> \n" +
+                "  <p>Welcome " + userName + "</p> \n" +
                 "</div>" +
                 "<nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n" +
                 "  <ul class=\"navbar-nav\">\n" +
                 "    <li class=\"nav-item active\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Home</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=home\">Home</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Forum</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=forum\">Forum</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Register</a>\n" +
-                "    </li>\n" +
-                "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">My Profile</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=profile\">My Profile</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
                 "</nav>";
@@ -61,16 +58,13 @@ public class PageBuilder {
                 "<nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n" +
                 "  <ul class=\"navbar-nav\">\n" +
                 "    <li class=\"nav-item active\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Home</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=home\">Home</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Forum</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=forum\">Forum</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Register</a>\n" +
-                "    </li>\n" +
-                "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link disabled\" href=\"#\">My Profile</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=register\">Register</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
                 " <form class=\"form-inline\" action=\"\" method=\"post\">\n" +
