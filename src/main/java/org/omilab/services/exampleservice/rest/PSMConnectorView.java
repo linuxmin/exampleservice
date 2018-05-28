@@ -58,14 +58,14 @@ public final class PSMConnectorView {
 
 
 		final StringBuilder sb = new StringBuilder();
-		System.out.println("hallo");
+
 
         if(request.getParams().get("login") != null){
             request.getParams().put("login","true");
             sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
         }else {
             if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
-
+				System.out.println(request.getParams().get("user"));
                 forumUser = forumUserRepository.
                         findByUserNameAndUserPassword(
                                 request.getParams().get("user"),
