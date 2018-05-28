@@ -19,6 +19,8 @@ public class PageBuilder {
                 "      <label for=\"comment\">Comment:</label>" +
                 "      <textarea class=\"form-control\" rows=\"5\" id=\"threadpostingid\" name=\"threadposting\"></textarea>" +
                 "    </div>\n" +
+                "   <input type=\"hidden\" name=\"login\" value=\"true\" />" +
+                "   <input type=\"hidden\" name=\"user\" value=\""+ username + "\" />" +
                 "    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n" +
                 "  </form>";
     }
@@ -99,7 +101,7 @@ public class PageBuilder {
 
     }
 
-    public String loggdInNav(String userName){
+    public String loggedInNav(String userName){
         return "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +

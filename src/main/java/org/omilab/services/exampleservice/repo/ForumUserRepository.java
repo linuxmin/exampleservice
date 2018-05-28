@@ -14,5 +14,7 @@ public interface ForumUserRepository extends Repository<ForumUser, Integer> {
 
     public ForumUser findByUserNameAndUserPassword(String userName, String userPassword);
 
+    public ForumUser findByUserName(String userName);
+
     ForumUser save(ForumUser f);
 }

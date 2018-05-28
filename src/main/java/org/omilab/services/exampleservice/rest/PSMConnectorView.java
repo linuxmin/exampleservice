@@ -2,10 +2,7 @@ package org.omilab.services.exampleservice.rest;
 
 import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
 import org.hibernate.exception.ConstraintViolationException;
-import org.omilab.services.exampleservice.model.ForumUser;
-import org.omilab.services.exampleservice.model.GenericRequest;
-import org.omilab.services.exampleservice.model.GenericServiceContent;
-import org.omilab.services.exampleservice.model.PageBuilder;
+import org.omilab.services.exampleservice.model.*;
 import org.omilab.services.exampleservice.repo.ForumThreadRepository;
 import org.omilab.services.exampleservice.repo.ForumUserRepository;
 import org.omilab.services.exampleservice.repo.PageRepository;
@@ -54,6 +51,7 @@ public final class PSMConnectorView {
 												final GenericRequest request)
 	{
 		ForumUser forumUser = new ForumUser();
+		ForumThread forumThread = new ForumThread();
 
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
 			return new GenericServiceContent("Not allowed!");
@@ -65,7 +63,17 @@ public final class PSMConnectorView {
 
 
         if(request.getParams().get("login") !=null && !request.getParams().get("navinput").equalsIgnoreCase("logout")){
-        	sb.append(pageBuilder.loggdInNav("hahaha"));
+        	sb.append(pageBuilder.loggedInNav("hahaha"));
+
+			if(request.getParams().get("threadtitle") != null){
+				sb.append("<div class=\"container\"");
+				forumThread.setThreadTitle(request.getParams().get("threadtitle"));
+				forumUser = forumUserRepository.findByUserName(request.getParams().get("user"));
+				forumThread.setForumUser(forumUser);
+				forumThread.setThreadTitle(request.getParams().get("threadtitle"));
+				forumThreadRepository.save(forumThread);
+				sb.append(pageBuilder.showThread(request.getParams().get("threadtitle"),request.getParams().get("threadposting")));
+			}
 
         	if(request.getParams().get("navinput").equalsIgnoreCase("forum")){
         		sb.append(pageBuilder.createThread("Benjamin"));
@@ -80,16 +88,12 @@ public final class PSMConnectorView {
                                 request.getParams().get("password")
                         );
                 if(forumUser != null) {
-                    sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
+                    sb.append(pageBuilder.loggedInNav(request.getParams().get("user")));
                 }else{
                     sb.append(pageBuilder.notLoggedInNav());
                 }
             }else {
 				sb.append(pageBuilder.notLoggedInNav());
-				if(request.getParams().get("threadtitle") != null){
-					sb.append("<div class=\"container\"");
-					sb.append(pageBuilder.showThread("dsf",request.getParams().get("threadposting")));
-				}
 
             }
         }
