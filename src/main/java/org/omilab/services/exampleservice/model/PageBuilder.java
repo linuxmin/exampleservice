@@ -30,13 +30,16 @@ public class PageBuilder {
                 "<nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n" +
                 "  <ul class=\"navbar-nav\">\n" +
                 "    <li class=\"nav-item active\">\n" +
-                "      <a class=\"nav-link\" href=\"?nav=home\">Home</a>\n" +
+                "      <a class=\"nav-link\" <a class=\"nav-link\" href=\"javascript:submitform('home');\">Home</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
                 "      <a class=\"nav-link\" href=\"javascript:submitform('forum');\">Forum</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"?nav=profile\">My Profile</a>\n" +
+                "      <a class=\"nav-link\" href=\"javascript:submitform('profile');\">My Profile</a>\n" +
+                "    </li>\n" +
+                "    <li class=\"nav-item\">\n" +
+                "      <a class=\"nav-link\" href=\"javascript:submitform('logout');\">Logout</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
                 "</nav>" + "<form class=\"form-inline\" name=\"loginform\" method=\"post\" action=\"\">\n" +
