@@ -2,6 +2,27 @@ package org.omilab.services.exampleservice.model;
 
 public class PageBuilder {
 
+    public String showThread(String threadtitle, String threadcontent){
+        return "<div class=\"row\">\n" +
+                "  <div class=\"col\">" + threadcontent + "</div>\n" +
+                "</div>";
+    }
+
+    public String createThread(String username){
+        return "  <h2>Create new Thread</h2>\n" +
+                "  <form method=\"post\" action=\"\">\n" +
+                "    <div class=\"form-group\">\n" +
+                "      <label for=\"title\">Title:</label>\n" +
+                "      <input type=\"text\" class=\"form-control\" id=\"threadtitleid\" placeholder=\"Enter title\" name=\"threadtitle\">\n" +
+                "    </div>\n" +
+                "    <div class=\"form-group\">\n" +
+                "      <label for=\"comment\">Comment:</label>" +
+                "      <textarea class=\"form-control\" rows=\"5\" id=\"threadpostingid\" name=\"threadposting\"></textarea>" +
+                "    </div>\n" +
+                "    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n" +
+                "  </form>";
+    }
+
     public String forumSite(){
         return "";
     }

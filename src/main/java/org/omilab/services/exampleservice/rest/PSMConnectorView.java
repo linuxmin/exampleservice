@@ -62,9 +62,17 @@ public final class PSMConnectorView {
 		final StringBuilder sb = new StringBuilder();
 		System.out.println(request.getParams().get("navinput"));
 
+		sb.append("<div class=\"container\"");
+
         if(request.getParams().get("login") !=null && !request.getParams().get("navinput").equalsIgnoreCase("logout")){
         	sb.append(pageBuilder.loggdInNav("hahaha"));
-        	sb.append(pageBuilder.homeSite());
+			if(request.getParams().get("threadtitle") != null){
+				sb.append(pageBuilder.showThread("dsf",request.getParams().get("threadcontent")));
+			}
+        	if(request.getParams().get("navinput").equalsIgnoreCase("forum")){
+        		sb.append(pageBuilder.createThread("Benjamin"));
+			}
+        	//sb.append(pageBuilder.homeSite());
         }else {
             if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
 
@@ -82,6 +90,7 @@ public final class PSMConnectorView {
                 sb.append(pageBuilder.notLoggedInNav());
             }
         }
+        sb.append("</div>");
 		return new GenericServiceContent(sb.toString());
 
 	}
