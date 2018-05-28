@@ -20,7 +20,7 @@ public class ForumUser {
     @Column
     private String userMail;
 
-    @OneToMany(mappedBy = "forumuser", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
+    @OneToMany(mappedBy = "forumUser", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<ForumThread> forumThreads;
 
     public ForumUser(){}
