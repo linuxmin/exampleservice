@@ -38,7 +38,7 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"?nav=profile\">My Profile</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
-                "</nav>" + "<form class=\"form-inline\" id=\"loginform\" method=\"post\" action=\"\">\n" +
+                "</nav>" + "<form class=\"form-inline\" name=\"loginform\" method=\"post\" action=\"\">\n" +
                 "<input type=\"hidden\" name=\"login\" value=\"true\" /></form>";
 
 
