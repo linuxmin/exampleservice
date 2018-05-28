@@ -14,8 +14,9 @@ public class PageBuilder {
                 "  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\"></script>\n" +
                 "  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js\"></script>\n" +
                 "<script type=\"text/javascript\">\n" +
-                "function submitform()\n" +
+                "function submitform(p)\n" +
                 "{\n" +
+                " document.getElementById('navform').value = p; " +
                 "  document.loginform.submit();\n" +
                 "}\n" +
                 "</script>\n" +
@@ -32,14 +33,15 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"?nav=home\">Home</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"?nav=forum\" onclick=\"submitform(); return false;\">Forum</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=forum\" onclick=\"submitform(\"forum\"); return false;\">Forum</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
                 "      <a class=\"nav-link\" href=\"?nav=profile\">My Profile</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
                 "</nav>" + "<form class=\"form-inline\" name=\"loginform\" method=\"post\" action=\"\">\n" +
-                "<input type=\"hidden\" name=\"login\" value=\"true\" /></form>";
+                "<input type=\"hidden\" id=\"login\" value=\"true\" />" +
+                "<input type=\"hidden\" id=\"navform\" value=\"true\" /></form>";
 
 
     }
