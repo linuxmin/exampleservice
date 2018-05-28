@@ -60,7 +60,7 @@ public final class PSMConnectorView {
 
 
 		final StringBuilder sb = new StringBuilder();
-		System.out.println(request.getParams().get("login"));
+		System.out.println(servletRequest.getSession().getAttribute("login"));
 
         if(servletRequest.getSession().getAttribute("login") !=null){
             //request.getParams().put("login","true");
