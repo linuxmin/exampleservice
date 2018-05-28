@@ -12,7 +12,7 @@ public interface ForumUserRepository extends Repository<ForumUser, Integer> {
   //  @Query("select f from ForumUser f join f.instance i where i.id=?1 and f.endpoint=?2")
     public ForumUser findByUserId(Integer userId);
 
-    public ForumUser findByUserName(String userName);
+    public ForumUser findByUserNameAndUserPassword(String userName, String userPassword);
 
     ForumUser save(ForumUser f);
 }

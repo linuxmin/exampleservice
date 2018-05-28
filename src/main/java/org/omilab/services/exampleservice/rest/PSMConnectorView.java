@@ -48,7 +48,7 @@ public final class PSMConnectorView {
 												final @Context HttpServletRequest servletRequest,
 												final GenericRequest request)
 	{
-
+	    boolean loggedIn;
 		ForumUser forumUser = new ForumUser();
 	//	servletRequest.getSession().getAttribute("content").toString();
 		//request.getParams().get("content");
@@ -58,14 +58,29 @@ public final class PSMConnectorView {
 
 
 		final StringBuilder sb = new StringBuilder();
-		if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
-		    sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
+
+        if(request.getParams().get("login") != null){
+            sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
         }else {
-            sb.append(pageBuilder.notLoggedInNav());
+            if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
+
+                forumUser = forumUserRepository.
+                        findByUserNameAndUserPassword(
+                                request.getParams().get("user"),
+                                request.getParams().get("password")
+                        );
+                if(forumUser != null) {
+                    sb.append(pageBuilder.loggdInNav(request.getParams().get("user")));
+                    request.getParams().put("login","true");
+                    request.getParams().put("user",request.getParams().get("user"));
+
+                }else{
+                    sb.append(pageBuilder.notLoggedInNav());
+                }
+            }else {
+                sb.append(pageBuilder.notLoggedInNav());
+            }
         }
 		return new GenericServiceContent(sb.toString());
 	}
-
-
-
 }
