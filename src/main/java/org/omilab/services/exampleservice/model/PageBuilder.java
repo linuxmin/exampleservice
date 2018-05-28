@@ -37,6 +37,13 @@ public class PageBuilder {
                 "      <a class=\"nav-link disabled\" href=\"#\">Disabled</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
+                " <form class=\"form-inline\" action=\"/action_page.php\">\n" +
+                "    <label for=\\\"email\\\">Email:</label>\\n\" +\n" +
+                "                \"    <input type=\\\"email\\\" class=\\\"form-control\\\" id=\\\"email\\\" placeholder=\\\"Enter email\\\" name=\\\"email\\\">\\n\" +\n" +
+                "                \"    <label for=\\\"pwd\\\">Password:</label>\\n\" +\n" +
+                "                \"    <input type=\\\"password\\\" class=\\\"form-control\\\" id=\\\"pwd\\\" placeholder=\\\"Enter password\\\" name=\\\"pswd\\\">" +
+                "    <button class=\"btn btn-success\" type=\"submit\">Login</button>\n" +
+                "  </form>" +
                 "</nav>";
 
     }
