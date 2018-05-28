@@ -2,6 +2,12 @@ package org.omilab.services.exampleservice.model;
 
 public class PageBuilder {
 
+    public String showForum(String threadtitle){
+        return "<div class=\"row\">\n" +
+                "  <div class=\"col\">" + threadtitle + "</div>\n" +
+                "</div>";
+    }
+
     public String showThread(String threadtitle, String threadposting){
         return "<div class=\"row\">\n" +
                 "  <div class=\"col\">" + threadposting + "</div>\n" +
@@ -102,7 +108,7 @@ public class PageBuilder {
 
     }
 
-    public String loggedInNav(String userName){
+    public String loggedInNav(String userName, Integer userId){
         return "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
@@ -143,7 +149,7 @@ public class PageBuilder {
                 "    </li>\n" +
                 "  </ul>\n" +
                 "</nav>" + "<form class=\"form-inline\" name=\"loginform\" method=\"post\" action=\"\">\n" +
-                "<input type=\"hidden\" name=\"login\" value=\"true\" />" +
+                "<input type=\"hidden\" name=\"login\" value=\"" + userId + "\" />" +
                 "<input type=\"hidden\" id=\"navform\" name=\"navinput\" value=\"true\" /></form>";
 
 

@@ -1,6 +1,7 @@
 package org.omilab.services.exampleservice.model;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -19,9 +20,13 @@ public class ForumThread {
     private ForumUser forumUser;
 
     @OneToMany(mappedBy = "forumThread", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
-    private List<ForumPosting> forumPostings;
+    private List<ForumPosting> forumPostings = new ArrayList<>();
 
     public ForumThread(){}
+
+    public void addForumPosting(ForumPosting forumPosting){
+        this.forumPostings.add(forumPosting);
+    }
 
     public List<ForumPosting> getForumPostings() {
         return forumPostings;
