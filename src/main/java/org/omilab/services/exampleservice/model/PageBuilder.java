@@ -12,7 +12,7 @@ public class PageBuilder {
                 "</div>";
     }
 
-    public String createThread(String username){
+    public String createThread(ForumUser forumUser){
         return "  <h2>Create new Thread</h2>\n" +
                 "  <form method=\"post\" action=\"\">\n" +
                 "    <div class=\"form-group\">\n" +
@@ -24,8 +24,8 @@ public class PageBuilder {
                 "      <textarea class=\"form-control\" rows=\"5\" id=\"threadpostingid\" name=\"threadposting\"></textarea>" +
                 "    </div>\n" +
                 "   <input type=\"hidden\" name=\"login\" value=\"true\" />" +
-                "   <input type=\"hidden\" name=\"user\" value=\""+ username + "\" />" +
-                "<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\"true\" />" +
+                "   <input type=\"hidden\" name=\"user\" value=\""+ forumUser.getUserName() + "\" />" +
+                "<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\"" + forumUser.getUserId() + "\" />" +
                 "    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n" +
                 "  </form>";
     }
