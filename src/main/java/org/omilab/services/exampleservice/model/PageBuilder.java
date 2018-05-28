@@ -33,7 +33,7 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"?nav=home\">Home</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"#\" onclick=\"submitform('forum'); return false;\">Forum</a>\n" +
+                "      <a class=\"nav-link\" href=\"javascript:submitform('forum');\">Forum</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
                 "      <a class=\"nav-link\" href=\"?nav=profile\">My Profile</a>\n" +
