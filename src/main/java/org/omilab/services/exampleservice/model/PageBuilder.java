@@ -38,7 +38,8 @@ public class PageBuilder {
                 "    </li>\n" +
                 "  </ul>\n" +
                 " <form class=\"form-inline\" action=\"/action_page.php\">\n" +
-                "    <input class=\"form-control mr-sm-2\" type=\"text\" placeholder=\"Username\">\n" +
+                "    <input class=\"form-control mr-sm-2\" type=\"text\" id=\"user\" placeholder=\"Username\">\n" +
+                "    <input class=\"form-control mr-sm-2\" type=\"passsword\" id=\"password\" placeholder=\"Password\">\n" +
                 "    <button class=\"btn btn-success\" type=\"submit\">Login</button>\n" +
                 "  </form>" +
                 "</nav>";
