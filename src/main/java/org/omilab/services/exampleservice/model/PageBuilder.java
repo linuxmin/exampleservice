@@ -3,7 +3,8 @@ package org.omilab.services.exampleservice.model;
 public class PageBuilder {
 
     public String showForum(String threadtitle, Integer threadId){
-        return " <a href=\"javascript:submitform('thread"+threadId+"');\" class=\"list-group-item list-group-item-action\">" + threadtitle +" </a>";
+        return " <a href=\"javascript:submitform('thread"+threadId+"');\" class=\"list-group-item list-group-item-action\">" + threadtitle +" </a>" +
+                "<span class=\"badge badge-primary badge-pill\">14</span>";
     }
 
     public String showThread(ForumThread forumThread){
