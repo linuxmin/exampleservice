@@ -2,10 +2,8 @@ package org.omilab.services.exampleservice.model;
 
 public class PageBuilder {
 
-    public String showForum(String threadtitle){
-        return "<div class=\"row\">\n" +
-                "  <div class=\"col\">" + threadtitle + "</div>\n" +
-                "</div>";
+    public String showForum(String threadtitle, Integer threadId){
+        return " <a href=\"javascript:submitform('thread"+threadId+"');\" class=\"list-group-item list-group-item-action\">" + threadtitle +" </a>";
     }
 
     public String showThread(String threadtitle, String threadposting){
