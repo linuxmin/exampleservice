@@ -57,6 +57,7 @@ public final class PSMConnectorView {
 	{
 		ForumUser forumUser = new ForumUser();
 		ForumThread forumThread = new ForumThread();
+		ForumPosting forumPosting = new ForumPosting();
 
 		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
 			return new GenericServiceContent("Not allowed!");
@@ -77,13 +78,16 @@ public final class PSMConnectorView {
 				forumUser = forumUserRepository.findByUserName(request.getParams().get("user"));
 				forumThread.setForumUser(forumUser);
 				forumThread.setThreadTitle(request.getParams().get("threadtitle"));
-
 				forumThreadRepository.save(forumThread);
+				forumPosting.setForumThread(forumThread);
+				forumPosting.setPostingContent(request.getParams().get("threadposting"));
+				forumPosting.setForumUser(forumUser);
+				forumPostingRepository.save(forumPosting);
 				sb.append(pageBuilder.showThread(request.getParams().get("threadtitle"),request.getParams().get("threadposting")));
 			}
 
         	if(request.getParams().get("navinput").equalsIgnoreCase("forum")){
-        		//sb.append(pageBuilder.createThread(forumUser.getUserName())); TODO
+        		sb.append(pageBuilder.createThread(forumUser.getUserName()));
 				sb.append("<div class=\"list-group\">");
 				for(ForumThread f : forumThreadRepository.findAll()){
 					sb.append(pageBuilder.showForum(f.getThreadTitle(), f.getThreadId()));
