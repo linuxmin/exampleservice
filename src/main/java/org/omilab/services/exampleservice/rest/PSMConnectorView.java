@@ -76,7 +76,7 @@ public final class PSMConnectorView {
         		String thread = request.getParams().get("navinput");
         		String delimiter = "[0-9]";
         		String[] tokens = thread.split(delimiter);
-        		Integer forumId = Integer.parseInt(tokens[0]);
+        		Integer forumId = Integer.parseInt(tokens[1]);
         		forumThread = forumThreadRepository.findByThreadId(forumId);
         		sb.append(pageBuilder.showThread(forumThread));
 			}
