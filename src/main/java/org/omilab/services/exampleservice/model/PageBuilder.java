@@ -2,9 +2,9 @@ package org.omilab.services.exampleservice.model;
 
 public class PageBuilder {
 
-    public String showThread(String threadtitle, String threadcontent){
+    public String showThread(String threadtitle, String threadposting){
         return "<div class=\"row\">\n" +
-                "  <div class=\"col\">" + threadcontent + "</div>\n" +
+                "  <div class=\"col\">" + threadposting + "</div>\n" +
                 "</div>";
     }
 
