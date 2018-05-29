@@ -30,7 +30,7 @@ public class ForumThread {
     public ForumThread(){}
 
     public String getCreationDate() {
-        return creationDate.toString();
+        return creationDate.toString().substring(0,15);
     }
 
     public void setCreationDate(Date creationDate) {
