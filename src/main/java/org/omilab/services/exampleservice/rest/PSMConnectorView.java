@@ -74,6 +74,10 @@ public final class PSMConnectorView {
         	forumUser = forumUserRepository.findByUserId(Integer.parseInt(request.getParams().get("login")));
         	sb.append(pageBuilder.loggedInNav(forumUser));
 
+        	if(request.getParams().get("delete")!=null){
+        		System.out.println("huhu: " + request.getParams().get("delete"));
+			}
+
         	if(request.getParams().get("navinput").equalsIgnoreCase("profile")){
         		List<ForumPosting> forumPostings = forumPostingRepository.findAllByForumUser_UserId(forumUser.getUserId());
         		sb.append(pageBuilder.showProfile(forumUser, forumPostings));

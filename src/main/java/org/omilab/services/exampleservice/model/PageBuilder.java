@@ -21,7 +21,10 @@ public class PageBuilder {
         for(int i=0; i<forumPostings.size(); i++){
             sb.append(" <div class=\"panel panel-primary\">\n" +
                     "      <div class=\"panel-heading\">" + forumPostings.get(i).getForumThread().getThreadTitle()+" " +
-                    "<a href=\"javascript:submitform('deleteposting" + forumPostings.get(i).getPostingId() + "');\" class=\"btn btn-danger\" role=\"button\">Delete Posting</a></div>\n" +
+                    "<form class=\"form-inline\" action=\"\">\n" +
+                    "    <input type=\"hidden\" name=\"deleteposting\" value=\""+ forumPostings.get(i).getPostingId() +"\">\n" +
+                    "    <button class=\"btn btn-danger\" type=\"submit\">Delete Posting</button>\n" +
+                    "  </form></div>\n" +
                     "      <div class=\"panel-body\">"+forumPostings.get(i).getPostingContent() +"</div>\n" +
                     "    </div>");
         }
