@@ -1,53 +1,25 @@
 package org.omilab.services.exampleservice.rest;
 
-import com.mysql.jdbc.exceptions.jdbc4.MySQLIntegrityConstraintViolationException;
-import org.hibernate.exception.ConstraintViolationException;
 import org.omilab.services.exampleservice.model.*;
-import org.omilab.services.exampleservice.repo.ForumPostingRepository;
-import org.omilab.services.exampleservice.repo.ForumThreadRepository;
-import org.omilab.services.exampleservice.repo.ForumUserRepository;
-import org.omilab.services.exampleservice.repo.PageRepository;
 import org.omilab.services.exampleservice.service.ForumService;
 import org.omilab.services.exampleservice.service.InstanceMgmtService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
-import org.springframework.util.Assert;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
-import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.List;
-import java.util.Map;
+
 
 @Component
 @Path("/view")
 public final class PSMConnectorView {
 
-//	private final PageRepository pageRepo;
-
-	//private final ForumUserRepository forumUserRepository;
-	//private final ForumThreadRepository forumThreadRepository;
-	//private final ForumPostingRepository forumPostingRepository;
-
 	private final InstanceMgmtService instanceMgmtService;
 	private final ForumService forumService;
 
 	private final PageBuilder pageBuilder = new PageBuilder();
-
-	/*
-	@Autowired
-	public PSMConnectorView(ForumUserRepository forumUserRepository,
-							ForumThreadRepository forumThreadRepository,
-							ForumPostingRepository forumPostingRepository,
-							InstanceMgmtService instanceMgmtService) {
-
-		this.instanceMgmtService = instanceMgmtService;
-		this.forumUserRepository = forumUserRepository;
-		this.forumThreadRepository = forumThreadRepository;
-		this.forumPostingRepository = forumPostingRepository;
-*/
 
 	@Autowired
 	public PSMConnectorView(ForumService forumService, InstanceMgmtService instanceMgmtService) {
@@ -64,33 +36,21 @@ public final class PSMConnectorView {
 												final @Context HttpServletRequest servletRequest,
 												final GenericRequest request)
 	{
+
 		ForumUser forumUser = new ForumUser();
 		ForumThread forumThread = new ForumThread();
 		ForumPosting forumPosting = new ForumPosting();
-	//	System.out.println(servletRequest.getRemoteAddr());
-
-	//	if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
-	//		return new GenericServiceContent("Not allowed!");
-
-
 		final StringBuilder sb = new StringBuilder();
-		System.out.println(request.getParams().get("navinput"));
-
-
-
 
         if(request.getParams().get("login") !=null &&  !request.getParams().get("navinput").equalsIgnoreCase("logout")){
-        	//forumUser = forumUserRepository.findByUserId(Integer.parseInt(request.getParams().get("login")));
 			forumUser = forumService.findUser(Integer.parseInt(request.getParams().get("login")));
 			sb.append(pageBuilder.loggedInNav(forumUser));
 
         	if(request.getParams().get("deleteposting")!=null){
-        		//forumPostingRepository.deleteByPostingId(Integer.parseInt(request.getParams().get("deleteposting")));
 				forumService.deletePosting(Integer.parseInt(request.getParams().get("deleteposting")));
         	}
 
 			if(request.getParams().get("navinput").equalsIgnoreCase("searching") && request.getParams().get("search")!=null){
-        		//List<ForumThread> forumThreadsSearch = forumThreadRepository.findByThreadTitleContainingIgnoreCase(request.getParams().get("search"));
 				List<ForumThread> forumThreadsSearch = forumService.searchThread(request.getParams().get("search"));
 				if(forumThreadsSearch.size() > 0){
 					sb.append("<div class=\"list-group\">");
@@ -102,7 +62,6 @@ public final class PSMConnectorView {
 			}
 
         	if(request.getParams().get("navinput").equalsIgnoreCase("profile")){
-        		//List<ForumPosting> forumPostings = forumPostingRepository.findAllByForumUser_UserId(forumUser.getUserId());
 				List<ForumPosting> forumPostings = forumService.findUserPostings(forumUser.getUserId());
 				sb.append(pageBuilder.showProfile(forumUser, forumPostings));
 			}
@@ -119,7 +78,6 @@ public final class PSMConnectorView {
 					forumService.savePosting(forumPosting);
 					forumThread.addForumPosting(forumPosting);
 
-					//		forumThreadRepository.findByThreadId(answerThreadId).addForumPosting();
 				}
         		sb.append("<div class=\"postings\">");
         		for(int i = 0; i<forumThread.getForumPostings().size(); i++) {
@@ -167,7 +125,6 @@ public final class PSMConnectorView {
 
 
 			}
-        	//sb.append(pageBuilder.homeSite());
         }else {
             if(request.getParams().get("user")!=null && request.getParams().get("password")!=null){
 
