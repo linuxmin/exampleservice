@@ -152,10 +152,11 @@ public final class PSMConnectorView {
                 }
             }else {
 				sb.append(pageBuilder.notLoggedInNav());
-				if(request.getParams().get("navinput").equalsIgnoreCase("register")){
-					sb.append(pageBuilder.showRegistration());
+				if(request.getParams().get("navinput")!=null) {
+					if (request.getParams().get("navinput").equalsIgnoreCase("register")) {
+						sb.append(pageBuilder.showRegistration());
+					}
 				}
-
             }
         }
         sb.append("</div>");
