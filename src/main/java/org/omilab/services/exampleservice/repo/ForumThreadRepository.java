@@ -8,7 +8,7 @@ import java.util.List;
 
 public interface ForumThreadRepository extends Repository<ForumThread, Integer> {
 
-    public ForumThread findByThreadTitle(String forumThreadTitle);
+     List<ForumThread> findByThreadTitleContainingIgnoreCase(String threadTitle);
 
     public ForumThread findByThreadId(Integer forumThreadId);
 

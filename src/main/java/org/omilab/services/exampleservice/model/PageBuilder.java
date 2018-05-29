@@ -225,10 +225,13 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"javascript:submitform('logout');\">Logout</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
-                "  <form class=\"navbar-form navbar-left\" action=\"/action_page.php\">\n" +
+                "  <form class=\"navbar-form navbar-left\" action=\"\">\n" +
                 "      <div class=\"input-group\">\n" +
-                "        <input type=\"text\" class=\"form-control\" placeholder=\"Search\" name=\"search\">\n" +
-                "        <div class=\"input-group-btn\">\n" +
+                "        <input type=\"text\" class=\"form-control\" placeholder=\"Search Thread\" name=\"search\">\n" +
+                "   <input type=\"hidden\" name=\"login\" value=\"" + forumUser.getUserId() + "\" />" +
+                "   <input type=\"hidden\" name=\"user\" value=\""+ forumUser.getUserName() + "\" />" +
+                "   <input type=\"hidden\" name=\"navinput\" value=\""+ "searching" + "\" />" +
+        "        <div class=\"input-group-btn\">\n" +
                 "          <button class=\"btn btn-default\" type=\"submit\">\n" +
                 "            <i class=\"glyphicon glyphicon-search\"></i>\n" +
                 "          </button>\n" +

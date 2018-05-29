@@ -78,6 +78,13 @@ public final class PSMConnectorView {
         		forumPostingRepository.deleteByPostingId(Integer.parseInt(request.getParams().get("deleteposting")));
 			}
 
+			if(request.getParams().get("navinput").equalsIgnoreCase("searching") && request.getParams().get("search")!=null){
+        		List<ForumThread> forumThreadsSearch = forumThreadRepository.findByThreadTitleContainingIgnoreCase(request.getParams().get("search"));
+        		if(forumThreadsSearch.size() > 0){
+        			System.out.println("yeah");
+				}
+			}
+
         	if(request.getParams().get("navinput").equalsIgnoreCase("profile")){
         		List<ForumPosting> forumPostings = forumPostingRepository.findAllByForumUser_UserId(forumUser.getUserId());
         		sb.append(pageBuilder.showProfile(forumUser, forumPostings));
