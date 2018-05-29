@@ -64,7 +64,7 @@ public class PageBuilder {
             return "  <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
                     "    <div class=\"d-flex w-100 justify-content-between\">\n" +
                     "      <h5 class=\"mb-1\">" + forumThread.getForumUser().getUserName() + "</h5>\n" +
-                    "      <small>3 days ago</small>\n" +
+                    "      <small>"+ forumThread.getForumPostings().size() + " Postings</small>\n" +
                     "    </div>\n" +
                     "    <p class=\"mb-1\">"+ forumThread.getThreadTitle() + "</p>\n" +
                     "    <small>"+ forumThread.getCreationDate() + "</small>\n" +
