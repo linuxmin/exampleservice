@@ -6,8 +6,13 @@ public class PageBuilder {
         return "";
     }
 
-    public String showForum(ForumThread forumThread){
-        return " <a href=\"javascript:submitform('thread"+forumThread.getThreadId()+"');\" class=\"list-group-item list-group-item-action\">" + forumThread.getThreadTitle() +"<span class=\"badge badge-primary badge-pill\">"+forumThread.getForumPostings().size() + "</span></a>";
+    public String showForum(ForumThread forumThread, boolean owner) {
+        if (!owner) {
+            return " <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action\">" + forumThread.getThreadTitle() + "<span class=\"badge badge-primary badge-pill\">" + forumThread.getForumPostings().size() + "</span></a>";
+        } else {
+            return " <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action\">" + forumThread.getThreadTitle() + "<span class=\"badge badge-primary badge-pill\">"+ "<button type=\"button\" class=\"btn btn-danger\">Delete Thread</button>" + forumThread.getForumPostings().size() + "</span></a>";
+
+        }
     }
 
     public String showThread(ForumThread forumThread, Integer i){
