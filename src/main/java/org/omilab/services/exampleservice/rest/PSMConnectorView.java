@@ -74,7 +74,7 @@ public final class PSMConnectorView {
         	forumUser = forumUserRepository.findByUserId(Integer.parseInt(request.getParams().get("login")));
         	sb.append(pageBuilder.loggedInNav(forumUser));
 
-        	if(request.getParams().get("delete")!=null){
+        	if(request.getParams().get("deleteposting")!=null){
         		System.out.println("huhu: " + request.getParams().get("delete"));
 			}
 
