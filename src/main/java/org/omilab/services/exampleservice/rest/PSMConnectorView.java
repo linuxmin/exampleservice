@@ -143,8 +143,8 @@ public final class PSMConnectorView {
                 }
             }else {
 				sb.append(pageBuilder.notLoggedInNav());
-				if(request.getParams().get("navinput")!=null)
-					if(request.getParams().get("navinput").equalsIgnoreCase("home")) {
+				if(request.getParams().get("nav")!=null)
+					if(request.getParams().get("nav").equalsIgnoreCase("home")) {
 						sb.append(pageBuilder.homeSite());
 					}
 

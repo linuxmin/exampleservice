@@ -106,9 +106,9 @@ public class PageBuilder {
         return "<div class=\"container\">\n" +
                 "    <div class=\"row\">\n" +
                 "        <div class=\"col-sm-6\">\n" +
-                "            <h1 id=\"cats\">Was gibt es hier zu sehen?</h1>\n" +
+                "            <h1 id=\"cats\">Was gibt es hier zu diskutieren?</h1>\n" +
                 "    <h3>Katzen</h3>\n" +
-                "    <p><img class=\"catswithbats\" src=\"pictures/catsbats.jpg\" alt=\"Cats with Bats\" width=480\">\"Die ersten Vorfahren der Kleinkatze der Alten Welt, zu denen auch die Wildkatze (Felis silvestris) gehört, erschienen vor etwa neun Millionen Jahren.[16] Die Wildkatze ist asiatischen Ursprungs und trat erstmals im unteren Pleistozän mit der Spezies Felis lunensis in Erscheinung.\n" +
+                "    <p><img class=\"catswithbats\" src=\"http://wwwlab.cs.univie.ac.at/~a0915812/imse/pictures/catsbats.jpg\" alt=\"Cats with Bats\" width=480\">\"Die ersten Vorfahren der Kleinkatze der Alten Welt, zu denen auch die Wildkatze (Felis silvestris) gehört, erschienen vor etwa neun Millionen Jahren.[16] Die Wildkatze ist asiatischen Ursprungs und trat erstmals im unteren Pleistozän mit der Spezies Felis lunensis in Erscheinung.\n" +
                 "    Anschließend breiteten sich verschiedene Unterarten in der gesamten Alten Welt aus. Wegen der morphologischen Ähnlichkeit und der nahen genetischen Verwandtschaft war der Ursprung der Hauskatze (Felis catus) bis vor kurzem nicht gänzlich geklärt.\n" +
                 "    Eine Abstammung von der Manul (Otocolobus manul) oder der Rohrkatze (Felis chaus) wurde von der Wissenschaft verneint.\n" +
                 "    Auch die Meinung, die Hauskatze sei eine Kreuzung aus Rohr- und Wildkatze, ist heute obsolet, wenn es auch vereinzelt zu Paarungen der beiden Arten gekommen sein mag, zumal diese in der F1-Generation fruchtbar sind.\n" +
@@ -116,12 +116,7 @@ public class PageBuilder {
                 "    Es galt als wahrscheinlich, dass Vertreter von drei Hauptgruppen der Art (Waldkatze, Falbkatze, Steppenkatze) am Domestikationsprozess beteiligt waren. Hierbei hat die Waldkatze (Felis silvestris silvestris) ihren natürlichen Lebensraum in Europa, Kleinasien und im Iran.\n" +
                 "    Sie ist relativ kräftig, hat kurze Ohren und einen buschigen, dicken Schwanz. Die Falbkatze (Felis silvestris lybica) lebt in den Buschlandschaften und Steppen Afrikas und Arabiens. Sie hat große Ohren, ist schlank und hochbeinig.\n" +
                 "    Die Steppenkatze (Felis silvestris ornata) kommt in Vorder- und Mittelasien vor. Sie ist kräftiger gebaut und untersetzter als die Falbkatze.\n" +
-                "    Die genetischen Merkmale der Wildkatzen sind gegenüber denen der Hauskatze dominant. Als Hauptstammform betrachtete man die Falbkatze, der zweitstärkste Einfluss wurde der Steppenkatze zugesprochen. Die Waldkatze ist ein ausgesprochener Kulturflüchter und kam als Vorfahre am wenigsten in Frage.\n" +
-                "    Tatsächlich ist unter den verschiedenen Unterarten von Felis silvestris der Urahn der domestizierten Hauskatze die auch als Falbkatze bezeichnete afrikanische Wildkatze Felis silvestris lybica.[35]\n" +
-                "    Diese Unterart ist die am wenigsten aggressive und damit am besten für das Zusammenleben mit den Menschen geeignet, so dass sie im Alten Ägypten als Heimtier gehalten wurde.\n" +
-                "    Ein Team der Universität Oxford um den Genetiker Carlos Driscoll, das die Gene von fast 1000 Hauskatzen von fünf Kontinenten untersuchte, wies nach,\n" +
-                "    dass alle fünf aufgefundenen genetischen Hauptlinien allein von der Felis silvestris lybica abstammen und dass die\n" +
-                "        Domestikation wahrscheinlich fünffach unabhängig voneinander im sogenannten Fruchtbaren Halbmond erfolgte.\"[36] (Quelle: <a href=\"https://de.wikipedia.org/wiki/Hauskatze\" target=\"_blank\">Wikipedia</a>)\n" +
+                "    Die genetischen Merkmale der Wildkatzen sind gegenüber denen der Hauskatze dominant.\"[36] (Quelle: <a href=\"https://de.wikipedia.org/wiki/Hauskatze\" target=\"_blank\">Wikipedia</a>)\n" +
                 "    </p>\n" +
                 "        </div>\n" +
                 "        <div class=\"col-sm-6\">\n" +
