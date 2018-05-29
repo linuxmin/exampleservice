@@ -7,7 +7,7 @@ public class PageBuilder {
     public String showProfile(ForumUser forumUser, List<ForumPosting> forumPostings){
         StringBuilder sb = new StringBuilder();
 
-        sb.append("<div class=\"container\"><div class=\"media\">\n" +
+        sb.append("<br><div class=\"container\"><div class=\"media\">\n" +
                 "  <div class=\"media-left\">\n" +
                 "    <img src=\"https://www.w3schools.com/bootstrap4/img_avatar3.png\" class=\"media-object\" style=\"width:60px\">\n" +
                 "  </div>\n" +
