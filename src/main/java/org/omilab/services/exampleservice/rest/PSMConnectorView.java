@@ -81,6 +81,7 @@ public final class PSMConnectorView {
         		for(int i = 0; i<forumThread.getForumPostings().size(); i++) {
 					sb.append(pageBuilder.showThread(forumThread, i));
 				}
+				sb.append(pageBuilder.createThread(forumUser));
 			}
 
 			if(request.getParams().get("navinput").contains("answer")){
