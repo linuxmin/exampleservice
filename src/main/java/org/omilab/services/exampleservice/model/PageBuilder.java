@@ -28,7 +28,7 @@ public class PageBuilder {
                "    <p>"+ forumThread.getForumPostings().get(i).getPostingContent() + "</p>\n" +
                "  </div>\n" +
                "</div>"
-               + "<button type=\"button\" class=\"btn btn-lg btn-outline-success\" onclick=\"submitform('thread'" + forumThread.getThreadId() +"');\">Post an Answer</button>";
+               + "<button type=\"button\" class=\"btn btn-lg btn-outline-success\" onclick=\"submitform('thread" + forumThread.getThreadId() +"');\">Post an Answer</button>";
     }
 
     public String createThread(ForumUser forumUser){
