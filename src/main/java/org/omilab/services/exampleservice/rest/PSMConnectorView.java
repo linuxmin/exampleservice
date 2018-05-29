@@ -90,9 +90,11 @@ public final class PSMConnectorView {
         		String forumThreadIdNew = thread.substring(6);
         		Integer forumThreadId = Integer.parseInt(forumThreadIdNew);
         		forumThread = forumThreadRepository.findByThreadId(forumThreadId);
+        		sb.append("<div class=\"postings\"");
         		for(int i = 0; i<forumThread.getForumPostings().size(); i++) {
 					sb.append(pageBuilder.showThread(forumThread, i));
 				}
+				sb.append("</div>");
 				sb.append("  <form method=\"post\" action=\"\">\n" +
 						"    <div class=\"form-group\">\n" +
 						"      <label for=\"answer\">Create new Answer:</label>" +
