@@ -17,5 +17,5 @@ public interface ForumPostingRepository extends Repository<ForumPosting, Integer
 
     @Modifying
     @Transactional
-    ForumPosting deleteByPostingId(Integer postingId);
+    void deleteByPostingId(Integer postingId);
 }
