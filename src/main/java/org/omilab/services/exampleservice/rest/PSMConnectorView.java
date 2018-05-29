@@ -109,6 +109,7 @@ public final class PSMConnectorView {
 					sb.append(pageBuilder.showForum(f));
 				}
 				sb.append("</div>");
+				sb.append("<");
 
 			}
         	//sb.append(pageBuilder.homeSite());

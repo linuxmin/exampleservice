@@ -2,7 +2,7 @@ package org.omilab.services.exampleservice.model;
 
 public class PageBuilder {
 
-    public String showThreadNavigation(){
+    public String createAnswer(ForumThread forumThread){
         return "";
     }
 
@@ -27,7 +27,8 @@ public class PageBuilder {
                "    <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>\n" +
                "    <p>"+ forumThread.getForumPostings().get(i).getPostingContent() + "</p>\n" +
                "  </div>\n" +
-               "</div>";
+               "</div>"
+               + "<button type=\"button\" class=\"btn btn-outline-success\">Success</button>";
     }
 
     public String createThread(ForumUser forumUser){
