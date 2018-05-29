@@ -37,6 +37,7 @@ public final class PSMConnectorView {
 												final GenericRequest request)
 	{
 
+		System.out.println(request.getParams().get("navinput"));
 		ForumUser forumUser = new ForumUser();
 		ForumThread forumThread = new ForumThread();
 		ForumPosting forumPosting = new ForumPosting();
