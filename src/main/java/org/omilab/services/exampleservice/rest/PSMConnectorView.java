@@ -155,12 +155,14 @@ public final class PSMConnectorView {
 									sb.append("<div><h1>Thank you! You can login now!</h1></div>");
 								}catch(Exception e){
 									sb.append("<div><h1>Username already existent, try again!</h1></div>");
+									sb.append(pageBuilder.showRegistration());
 
 								}
 
-							}else
+							}else {
 								sb.append("<div><h1>Passwords didn't match, try again!</h1></div>");
-
+								sb.append(pageBuilder.showRegistration());
+							}
 						}else {
 							sb.append(pageBuilder.showRegistration());
 						}
