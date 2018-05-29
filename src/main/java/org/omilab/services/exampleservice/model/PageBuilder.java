@@ -7,7 +7,7 @@ public class PageBuilder {
     public String showProfile(ForumUser forumUser, List<ForumPosting> forumPostings){
         StringBuilder sb = new StringBuilder();
 
-        sb.append("<div class=\"media\">\n" +
+        sb.append("<div class=\"container\"><div class=\"media\">\n" +
                 "  <div class=\"media-left\">\n" +
                 "    <img src=\"https://www.w3schools.com/bootstrap4/img_avatar3.png\" class=\"media-object\" style=\"width:60px\">\n" +
                 "  </div>\n" +
@@ -16,7 +16,7 @@ public class PageBuilder {
                 "    <p>Registered since " + forumUser.getCreationDate() + ", Postings: " +
                 forumPostings.size() + "</p>\n" +
                 "  </div>\n" +
-                "</div>");
+                "</div><div class=\"postings\"");
 
         for(int i=0; i<forumPostings.size(); i++){
             sb.append(" <div class=\"panel panel-primary\">\n" +
@@ -24,6 +24,7 @@ public class PageBuilder {
                     "      <div class=\"panel-body\">"+forumPostings.get(i).getPostingContent() +"</div>\n" +
                     "    </div>");
         }
+        sb.append("</div>");
 
         return sb.toString();
     }
