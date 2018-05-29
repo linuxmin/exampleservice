@@ -152,6 +152,25 @@ public final class PSMConnectorView {
                 }
             }else {
 				sb.append(pageBuilder.notLoggedInNav());
+
+				if(request.getParams().get("username")!=null && request.getParams().get("pwd")!=null && request.getParams().get("rpwd")!=null && request.getParams().get("mail")!=null ){
+					if(request.getParams().get("pwd").equals(request.getParams().get("rpwd"))){
+
+						forumUser.setUserData(request.getParams().get("username"),
+								request.getParams().get("pwd"),
+								request.getParams().get("email"));
+						try {
+							forumUserRepository.save(forumUser);
+						}catch(Exception e){
+							sb.append("<div><h1>Username already existent, try again!</h1></div>");
+
+						}
+						sb.append("<div><h1>Thank you! You can login now!</h1></div>");
+					}else
+						sb.append("<div><h1>Passwords didn't match, try again!</h1></div>");
+
+				}
+
 				if(request.getParams().get("nav")!=null) {
 					if (request.getParams().get("nav").equalsIgnoreCase("register")) {
 						sb.append(pageBuilder.showRegistration());
