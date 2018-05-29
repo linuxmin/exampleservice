@@ -1,8 +1,10 @@
 package org.omilab.services.exampleservice.model;
 
+import org.springframework.format.annotation.DateTimeFormat;
+import sun.util.resources.cldr.en.CalendarData_en_VI;
+
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Entity
 @Table(name = "forumthread",
@@ -22,7 +24,18 @@ public class ForumThread {
     @OneToMany(mappedBy = "forumThread", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<ForumPosting> forumPostings = new ArrayList<>();
 
+    @Column(name="creationDate")
+    private Date creationDate = new Date();
+
     public ForumThread(){}
+
+    public String getCreationDate() {
+        return creationDate.toString();
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
 
     public void addForumPosting(ForumPosting forumPosting){
         this.forumPostings.add(forumPosting);

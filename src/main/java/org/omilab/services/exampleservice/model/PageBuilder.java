@@ -12,11 +12,11 @@ public class PageBuilder {
         } else {
             return "  <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
                     "    <div class=\"d-flex w-100 justify-content-between\">\n" +
-                    "      <h5 class=\"mb-1\">" + forumThread.getThreadTitle() + "</h5>\n" +
+                    "      <h5 class=\"mb-1\">" + forumThread.getForumUser().getUserName() + "</h5>\n" +
                     "      <small>3 days ago</small>\n" +
                     "    </div>\n" +
-                    "    <p class=\"mb-1\">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>\n" +
-                    "    <small>Donec id elit non mi porta.</small>\n" +
+                    "    <p class=\"mb-1\">"+ forumThread.getThreadTitle() + "</p>\n" +
+                    "    <small>"+ forumThread.getCreationDate() + "</small>\n" +
                     "  </a>";
 
         }
