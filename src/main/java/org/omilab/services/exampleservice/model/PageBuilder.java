@@ -77,7 +77,7 @@ public class PageBuilder {
        return "<div class=\"media border p-3\">\n" +
                "  <img src=\"https://www.w3schools.com/bootstrap4/img_avatar3.png\" alt=\"John Doe\" class=\"mr-3 mt-3 rounded-circle\" style=\"width:60px;\">\n" +
                "  <div class=\"media-body\">\n" +
-               "    <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>\n" +
+               "    <h4>" + forumThread.getForumPostings().get(i).getForumUser().getUserName() + "<small><i>Posted on "+ forumThread.getForumPostings().get(i).getCreationDate() + "</i></small></h4>\n" +
                "    <p>"+ forumThread.getForumPostings().get(i).getPostingContent() + "</p>\n" +
                "  </div>\n" +
                "</div>";
