@@ -10,7 +10,14 @@ public class PageBuilder {
         if (!owner) {
             return " <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action\">" + forumThread.getThreadTitle() + "<span class=\"badge badge-primary badge-pill\">" + forumThread.getForumPostings().size() + "</span></a>";
         } else {
-            return "<div class=\"list-group-item list-group-item-action\">" +"<a class=\"list-group-item list-group-item-action\" href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\">" + forumThread.getThreadTitle() + "</a><span class=\"badge badge-primary badge-pill\">" + forumThread.getForumPostings().size() + "</span></div>";
+            return "  <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action flex-column align-items-start active\">\n" +
+                    "    <div class=\"d-flex w-100 justify-content-between\">\n" +
+                    "      <h5 class=\"mb-1\">" + forumThread.getThreadTitle() + "</h5>\n" +
+                    "      <small>3 days ago</small>\n" +
+                    "    </div>\n" +
+                    "    <p class=\"mb-1\">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>\n" +
+                    "    <small>Donec id elit non mi porta.</small>\n" +
+                    "  </a>";
 
         }
     }
