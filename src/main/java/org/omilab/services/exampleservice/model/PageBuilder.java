@@ -2,9 +2,6 @@ package org.omilab.services.exampleservice.model;
 
 public class PageBuilder {
 
-    public String createAnswer(ForumThread forumThread){
-        return "";
-    }
 
     public String showForum(ForumThread forumThread) {
 

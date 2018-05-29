@@ -81,14 +81,20 @@ public final class PSMConnectorView {
         		for(int i = 0; i<forumThread.getForumPostings().size(); i++) {
 					sb.append(pageBuilder.showThread(forumThread, i));
 				}
-				sb.append(pageBuilder.createThread(forumUser));
-			}
-
-			if(request.getParams().get("navinput").contains("answer")){
-				String thread = request.getParams().get("navinput");
-				String forumThreadIdNew = thread.substring(6);
-				Integer forumThreadId = Integer.parseInt(forumThreadIdNew);
-				forumThread = forumThreadRepository.findByThreadId(forumThreadId);
+				sb.append("  <form method=\"post\" action=\"\">\n" +
+						"    <div class=\"form-group\">\n" +
+						"      <label for=\"title\">Title:</label>\n" +
+						"      <input type=\"text\" class=\"form-control\" id=\"threadtitleid\" placeholder=\"Enter title\" name=\"threadtitle\">\n" +
+						"    </div>\n" +
+						"    <div class=\"form-group\">\n" +
+						"      <label for=\"comment\">Comment:</label>" +
+						"      <textarea class=\"form-control\" rows=\"5\" id=\"threadpostingid\" name=\"threadposting\"></textarea>" +
+						"    </div>\n" +
+						"   <input type=\"hidden\" name=\"login\" value=\"" + forumUser.getUserId() + "\" />" +
+						"   <input type=\"hidden\" name=\"user\" value=\""+ forumUser.getUserName() + "\" />" +
+						"<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\"true\" />" +
+						"    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n" +
+						"  </form>");
 			}
 
 			else if(request.getParams().get("navinput").equalsIgnoreCase("newtopic")){
