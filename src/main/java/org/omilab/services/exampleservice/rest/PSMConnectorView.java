@@ -69,6 +69,7 @@ public final class PSMConnectorView {
 
 
 
+
         if(request.getParams().get("login") !=null &&  !request.getParams().get("navinput").equalsIgnoreCase("logout")){
         	forumUser = forumUserRepository.findByUserId(Integer.parseInt(request.getParams().get("login")));
         	sb.append(pageBuilder.loggedInNav(forumUser));
@@ -151,6 +152,9 @@ public final class PSMConnectorView {
                 }
             }else {
 				sb.append(pageBuilder.notLoggedInNav());
+				if(request.getParams().get("navinput").equalsIgnoreCase("register")){
+					sb.append(pageBuilder.showRegistration());
+				}
 
             }
         }

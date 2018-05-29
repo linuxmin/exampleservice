@@ -2,6 +2,28 @@ package org.omilab.services.exampleservice.model;
 
 public class PageBuilder {
 
+    public String showRegistration(){
+       return "<form method=\"post\" action=\"\">\n" +
+               "  <div class=\"form-group\">\n" +
+               "    <label for=\"usernameid\">Username:</label>\n" +
+               "    <input type=\"text\" class=\"form-control\" id=\"usernameid\" name=\"username\">\n" +
+               "  </div>\n" +
+               "  <div class=\"form-group\">\n" +
+               "    <label for=\"emailid\">Email address:</label>\n" +
+               "    <input type=\"email\" class=\"form-control\" id=\"emailid\" name=\"email\">\n" +
+               "  </div>\n" +
+               "  <div class=\"form-group\">\n" +
+               "    <label for=\"pwdid\">Password:</label>\n" +
+               "    <input type=\"password\" class=\"form-control\" id=\"pwdid\" name=\"pwd\">\n" +
+               "  </div>\n" +
+               "  <div class=\"form-group\">\n" +
+               "    <label for=\"rpwdid\">Repeat Password:</label>\n" +
+               "    <input type=\"password\" class=\"form-control\" id=\"rpwid\" name=\"rpwd\">\n" +
+               "  </div>\n" +
+               "  <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n" +
+               "</form>";
+    }
+
 
     public String showForum(ForumThread forumThread) {
 
@@ -213,13 +235,9 @@ public class PageBuilder {
                 "<nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n" +
                 "  <ul class=\"navbar-nav\">\n" +
                 "    <li class=\"nav-item active\">\n" +
-                "      <a class=\"nav-link\" href=\"?nav=home\">Home</a>\n" +
-                "    </li>\n" +
+                "      <a class=\"nav-link\" href=\"#\">Home</a>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"?nav=forum\">Forum</a>\n" +
-                "    </li>\n" +
-                "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"?nav=register\">Register</a>\n" +
+                "      <a class=\"nav-link\" href=\"javascript:submitform('register');\">Register</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
                 " <form class=\"form-inline\" action=\"\" method=\"post\">\n" +
