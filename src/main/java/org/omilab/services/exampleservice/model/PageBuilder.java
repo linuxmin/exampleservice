@@ -238,7 +238,7 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"?nav=home\">Home</a>\n" +
                 "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"?nav=register;\">Register</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=register\">Register</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
                 " <form class=\"form-inline\" action=\"\" method=\"post\">\n" +
