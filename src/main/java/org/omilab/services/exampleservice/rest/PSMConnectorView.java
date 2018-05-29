@@ -152,7 +152,8 @@ public final class PSMConnectorView {
                 }
             }else {
 				sb.append(pageBuilder.notLoggedInNav());
-				System.out.println(request.getParams().get("username"));
+				System.out.println(request.getParams().get("pwd"));
+				System.out.println(request.getParams().get("rpwd"));
 
 				if(request.getParams().get("nav")!=null) {
 					if (request.getParams().get("nav").equalsIgnoreCase("register")) {
