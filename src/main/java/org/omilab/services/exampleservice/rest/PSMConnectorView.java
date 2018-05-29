@@ -102,7 +102,7 @@ public final class PSMConnectorView {
 						"    </div>\n" +
 						"   <input type=\"hidden\" name=\"login\" value=\"" + forumUser.getUserId() + "\" />" +
 						"   <input type=\"hidden\" name=\"user\" value=\""+ forumUser.getUserName() + "\" />" +
-						"<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\""+forumThreadId + "\" />" +
+						"<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\"thread"+forumThreadId + "\" />" +
 						"    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n" +
 						"  </form>");
 			}
