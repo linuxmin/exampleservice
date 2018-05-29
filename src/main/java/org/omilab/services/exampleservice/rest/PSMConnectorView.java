@@ -45,6 +45,9 @@ public final class PSMConnectorView {
         if(request.getParams().get("login") !=null &&  !request.getParams().get("navinput").equalsIgnoreCase("logout")){
 			forumUser = forumService.findUser(Integer.parseInt(request.getParams().get("login")));
 			sb.append(pageBuilder.loggedInNav(forumUser));
+			if(request.getParams().get("navinput").equalsIgnoreCase("home")){
+				sb.append(pageBuilder.homeSite());
+			}
 
         	if(request.getParams().get("deleteposting")!=null){
 				forumService.deletePosting(Integer.parseInt(request.getParams().get("deleteposting")));
@@ -140,6 +143,10 @@ public final class PSMConnectorView {
                 }
             }else {
 				sb.append(pageBuilder.notLoggedInNav());
+				if(request.getParams().get("navinput")!=null)
+					if(request.getParams().get("navinput").equalsIgnoreCase("home")) {
+						sb.append(pageBuilder.homeSite());
+					}
 
 
 				if(request.getParams().get("nav")!=null) {
