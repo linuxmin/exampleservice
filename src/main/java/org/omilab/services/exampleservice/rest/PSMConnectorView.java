@@ -81,7 +81,11 @@ public final class PSMConnectorView {
 			if(request.getParams().get("navinput").equalsIgnoreCase("searching") && request.getParams().get("search")!=null){
         		List<ForumThread> forumThreadsSearch = forumThreadRepository.findByThreadTitleContainingIgnoreCase(request.getParams().get("search"));
         		if(forumThreadsSearch.size() > 0){
-        			System.out.println("yeah");
+					sb.append("<div class=\"list-group\">");
+					for(ForumThread f :forumThreadsSearch){
+						sb.append(pageBuilder.showForum(f));
+					}
+					sb.append("</div>");
 				}
 			}
 
