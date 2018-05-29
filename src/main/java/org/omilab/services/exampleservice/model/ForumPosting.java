@@ -10,7 +10,8 @@ public class ForumPosting {
     @GeneratedValue
     private Integer postingId;
 
-    @Column
+    @Lob
+    @Column( length = 100000 )
     private String postingContent;
 
     @ManyToOne
