@@ -168,6 +168,11 @@ public class PageBuilder {
                 "        </div>\n" +
                 "      </div>\n" +
                 "    </form>"+
+                "<ul class=\\\"navbar-nav\\\">\\n\" +\n" +
+                "                \"    <li class=\\\"nav-item active\\\">\\n\" +\n" +
+                "                \"      <a class=\\\"nav-link\\\" <a class=\\\"nav-link\\\" href=\\\"javascript:submitform('newtopic');\\\">Create new Thread</a>\\n\" +\n" +
+                "                \"    </li>\\n\" +\n" +
+                "                \"  </ul>\\n\" +" +
                 "</nav>" + "<form class=\"form-inline\" name=\"loginform\" method=\"post\" action=\"\">\n" +
                 "<input type=\"hidden\" name=\"login\" value=\"" + forumUser.getUserId() + "\" />" +
                 "<input type=\"hidden\" id=\"navform\" name=\"navinput\" value=\"true\" /></form>";

@@ -83,7 +83,7 @@ public final class PSMConnectorView {
 			}
 
 			if(request.getParams().get("threadtitle") != null){
-				sb.append("<div class=\"container\"");
+				//sb.append("<div class=\"container\"");
 				forumThread.setThreadTitle(request.getParams().get("threadtitle"));
 				forumUser = forumUserRepository.findByUserName(request.getParams().get("user"));
 				forumThread.setForumUser(forumUser);
@@ -103,7 +103,7 @@ public final class PSMConnectorView {
 					sb.append(pageBuilder.showForum(f));
 				}
 				sb.append("</div>");
-				sb.append(pageBuilder.createThread(forumUser));
+				//sb.append(pageBuilder.createThread(forumUser));
 			}
         	//sb.append(pageBuilder.homeSite());
         }else {
