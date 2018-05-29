@@ -73,6 +73,18 @@ public final class PSMConnectorView {
         	forumUser = forumUserRepository.findByUserId(Integer.parseInt(request.getParams().get("login")));
         	sb.append(pageBuilder.loggedInNav(forumUser));
 
+			if(request.getParams().get("answer") != null){
+				Integer answerThreadId = Integer.parseInt(request.getParams().get("navinput"));
+				forumThread = forumThreadRepository.findByThreadId(answerThreadId);
+				forumPosting.setForumThread(forumThread);
+				forumPosting.setPostingContent(request.getParams().get("answer"));
+				forumPosting.setForumUser(forumUser);
+				forumPostingRepository.save(forumPosting);
+				forumThread.addForumPosting(forumPosting);
+
+		//		forumThreadRepository.findByThreadId(answerThreadId).addForumPosting();
+			}
+
         	if(request.getParams().get("navinput").contains("thread")){
         		String thread = request.getParams().get("navinput");
         		String forumThreadIdNew = thread.substring(6);
@@ -83,16 +95,12 @@ public final class PSMConnectorView {
 				}
 				sb.append("  <form method=\"post\" action=\"\">\n" +
 						"    <div class=\"form-group\">\n" +
-						"      <label for=\"title\">Title:</label>\n" +
-						"      <input type=\"text\" class=\"form-control\" id=\"threadtitleid\" placeholder=\"Enter title\" name=\"threadtitle\">\n" +
-						"    </div>\n" +
-						"    <div class=\"form-group\">\n" +
-						"      <label for=\"comment\">Comment:</label>" +
-						"      <textarea class=\"form-control\" rows=\"5\" id=\"threadpostingid\" name=\"threadposting\"></textarea>" +
+						"      <label for=\"answer\">Create new Answer:</label>" +
+						"      <textarea class=\"form-control\" rows=\"5\" id=\"answerid\" name=\"answer\"></textarea>" +
 						"    </div>\n" +
 						"   <input type=\"hidden\" name=\"login\" value=\"" + forumUser.getUserId() + "\" />" +
 						"   <input type=\"hidden\" name=\"user\" value=\""+ forumUser.getUserName() + "\" />" +
-						"<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\"true\" />" +
+						"<input type=\"hidden\" id=\"navform2\" name=\"navinput\" value=\""+forumThreadId + "\" />" +
 						"    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>\n" +
 						"  </form>");
 			}
