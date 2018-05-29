@@ -1,6 +1,7 @@
 package org.omilab.services.exampleservice.model;
 
 import javax.persistence.*;
+import java.util.Date;
 
 @Entity
 public class ForumPosting {
@@ -19,7 +20,19 @@ public class ForumPosting {
     private ForumUser forumUser;
 
 
+    @Column(name="creationDate")
+    private Date creationDate = new Date();
+
+
     public ForumPosting (){}
+
+    public String getCreationDate() {
+        return creationDate.toString().substring(0,16);
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
 
 
 

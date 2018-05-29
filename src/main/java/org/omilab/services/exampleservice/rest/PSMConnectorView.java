@@ -105,11 +105,7 @@ public final class PSMConnectorView {
         	if(request.getParams().get("navinput").equalsIgnoreCase("forum")){
 				sb.append("<div class=\"list-group\">");
 				for(ForumThread f : forumThreadRepository.findAll()){
-					if(f.getForumUser().getUserId() == forumUser.getUserId()) {
-						sb.append(pageBuilder.showForum(f, true));
-					}else{
-						sb.append(pageBuilder.showForum(f, false));
-					}
+					sb.append(pageBuilder.showForum(f));
 				}
 				sb.append("</div>");
 

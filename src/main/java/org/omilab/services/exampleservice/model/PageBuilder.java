@@ -6,10 +6,8 @@ public class PageBuilder {
         return "";
     }
 
-    public String showForum(ForumThread forumThread, boolean owner) {
-        if (!owner) {
-            return " <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action\">" + forumThread.getThreadTitle() + "<span class=\"badge badge-primary badge-pill\">" + forumThread.getForumPostings().size() + "</span></a>";
-        } else {
+    public String showForum(ForumThread forumThread) {
+
             return "  <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action flex-column align-items-start\">\n" +
                     "    <div class=\"d-flex w-100 justify-content-between\">\n" +
                     "      <h5 class=\"mb-1\">" + forumThread.getForumUser().getUserName() + "</h5>\n" +
@@ -19,13 +17,17 @@ public class PageBuilder {
                     "    <small>"+ forumThread.getCreationDate() + "</small>\n" +
                     "  </a>";
 
-        }
+
     }
 
     public String showThread(ForumThread forumThread, Integer i){
-        return "<div class=\"list-group-item list-group-item-action\">" +
-                forumThread.getForumPostings().get(i).getPostingContent() +
-                "</div>";
+       return "<div class=\"media border p-3\">\n" +
+               "  <img src=\"https://www.w3schools.com/bootstrap4/img_avatar3.png\" alt=\"John Doe\" class=\"mr-3 mt-3 rounded-circle\" style=\"width:60px;\">\n" +
+               "  <div class=\"media-body\">\n" +
+               "    <h4>John Doe <small><i>Posted on February 19, 2016</i></small></h4>\n" +
+               "    <p>"+ forumThread.getForumPostings().get(i).getPostingContent() + "</p>\n" +
+               "  </div>\n" +
+               "</div>";
     }
 
     public String createThread(ForumUser forumUser){
