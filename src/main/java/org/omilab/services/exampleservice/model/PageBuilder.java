@@ -143,7 +143,7 @@ public class PageBuilder {
                 "}\n" +
                 "</script>\n" +
                 "<style>\n" +
-                ".list-group, .media{ max-height: 600px;\n" +
+                ".list-group, .media{ max-height: 300px;\n" +
                 "    margin-bottom: 10px;\n" +
                 "    overflow:scroll;\n" +
                 "    -webkit-overflow-scrolling: touch;}" +
