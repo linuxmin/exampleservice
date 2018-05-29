@@ -70,15 +70,16 @@ public final class PSMConnectorView {
 
         if(request.getParams().get("login") !=null &&  !request.getParams().get("navinput").equalsIgnoreCase("logout")){
         	forumUser = forumUserRepository.findByUserId(Integer.parseInt(request.getParams().get("login")));
-        	sb.append(pageBuilder.loggedInNav(forumUser.getUserName(),forumUser.getUserId()));
+        	sb.append(pageBuilder.loggedInNav(forumUser));
 
         	if(request.getParams().get("navinput").contains("thread")){
         		String thread = request.getParams().get("navinput");
         		String forumThreadIdNew = thread.substring(6);
         		Integer forumThreadId = Integer.parseInt(forumThreadIdNew);
         		forumThread = forumThreadRepository.findByThreadId(forumThreadId);
-
-        		sb.append(pageBuilder.showThread(forumThread));
+        		for(int i = 0; i<forumThread.getForumPostings().size(); i++) {
+					sb.append(pageBuilder.showThread(forumThread, i));
+				}
 			}
 
 			if(request.getParams().get("threadtitle") != null){
@@ -93,7 +94,7 @@ public final class PSMConnectorView {
 				forumPosting.setForumUser(forumUser);
 				forumPostingRepository.save(forumPosting);
 				forumThread.addForumPosting(forumPosting);
-				sb.append(pageBuilder.showThread(forumThread));
+				sb.append(pageBuilder.showThread(forumThread, 0));
 			}
 
         	if(request.getParams().get("navinput").equalsIgnoreCase("forum")){
@@ -114,7 +115,7 @@ public final class PSMConnectorView {
                                 request.getParams().get("password")
                         );
                 if(forumUser != null) {
-                    sb.append(pageBuilder.loggedInNav(forumUser.getUserName(),forumUser.getUserId()));
+                    sb.append(pageBuilder.loggedInNav(forumUser));
                 }else{
                     sb.append(pageBuilder.notLoggedInNav());
                 }

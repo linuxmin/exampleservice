@@ -10,9 +10,9 @@ public class PageBuilder {
         return " <a href=\"javascript:submitform('thread"+forumThread.getThreadId()+"');\" class=\"list-group-item list-group-item-action\">" + forumThread.getThreadTitle() +"<span class=\"badge badge-primary badge-pill\">"+forumThread.getForumPostings().size() + "</span></a>";
     }
 
-    public String showThread(ForumThread forumThread){
-        return "<div class=\"row\">\n" +
-                "  <div class=\"col\">" + forumThread.getForumPostings().get(0).getPostingContent() + "</div>\n" +
+    public String showThread(ForumThread forumThread, Integer i){
+        return "<div class=\"list-group-item list-group-item-action\">" +
+                forumThread.getForumPostings().get(i).getPostingContent() +
                 "</div>";
     }
 
@@ -110,7 +110,7 @@ public class PageBuilder {
 
     }
 
-    public String loggedInNav(String userName, Integer userId){
+    public String loggedInNav(ForumUser forumUser){
         return "<!DOCTYPE html>\n" +
                 "<html lang=\"en\">\n" +
                 "<head>\n" +
@@ -141,7 +141,7 @@ public class PageBuilder {
                 "\n" +
                 "<div class=\"jumbotron text-center\">\n" +
                 "  <h1>Enterprise IS Forum</h1>\n" +
-                "  <p>Welcome " + userName + "</p> \n" +
+                "  <p>Welcome " + forumUser.getUserName() + "</p> \n" +
                 "</div>" +
                 "<nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n" +
                 "  <ul class=\"navbar-nav\">\n" +
@@ -169,7 +169,7 @@ public class PageBuilder {
                 "      </div>\n" +
                 "    </form>"+
                 "</nav>" + "<form class=\"form-inline\" name=\"loginform\" method=\"post\" action=\"\">\n" +
-                "<input type=\"hidden\" name=\"login\" value=\"" + userId + "\" />" +
+                "<input type=\"hidden\" name=\"login\" value=\"" + forumUser.getUserId() + "\" />" +
                 "<input type=\"hidden\" id=\"navform\" name=\"navinput\" value=\"true\" /></form>";
 
 
