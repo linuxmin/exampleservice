@@ -24,6 +24,7 @@ public class PageBuilder {
                     "<form class=\"form-inline\" method=\"post\" action=\"\">\n" +
                             "   <input type=\"hidden\" name=\"login\" value=\"" + forumUser.getUserId() + "\" />" +
                             "   <input type=\"hidden\" name=\"user\" value=\""+ forumUser.getUserName() + "\" />" +
+                            "   <input type=\"hidden\" name=\"navinput\" value=\""+ "profile" + "\" />" +
                     "    <input type=\"hidden\" name=\"deleteposting\" value=\""+ forumPostings.get(i).getPostingId() +"\">\n" +
                     "    <button class=\"btn btn-danger\" type=\"submit\">Delete Posting</button>\n" +
                     "  </form></div>\n" +
