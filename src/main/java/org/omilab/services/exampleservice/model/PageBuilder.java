@@ -108,7 +108,7 @@ public class PageBuilder {
                 "        <div class=\"col-sm-6\">\n" +
                 "            <h1 id=\"cats\">Was gibt es hier zu diskutieren?</h1>\n" +
                 "    <h3>Katzen</h3>\n" +
-                "    <p><img class=\"catswithbats\" src=\"http://wwwlab.cs.univie.ac.at/~a0915812/imse/pictures/catsbats.jpg\" alt=\"Cats with Bats\" width=480\">\"Die ersten Vorfahren der Kleinkatze der Alten Welt, zu denen auch die Wildkatze (Felis silvestris) gehört, erschienen vor etwa neun Millionen Jahren.[16] Die Wildkatze ist asiatischen Ursprungs und trat erstmals im unteren Pleistozän mit der Spezies Felis lunensis in Erscheinung.\n" +
+                "    <p><img class=\"catswithbats\" src=\"http://wwwlab.cs.univie.ac.at/~a0915812/imse/pictures/catsbats.jpg\" alt=\"Cats with Bats\" width=240\">\"Die ersten Vorfahren der Kleinkatze der Alten Welt, zu denen auch die Wildkatze (Felis silvestris) gehört, erschienen vor etwa neun Millionen Jahren.[16] Die Wildkatze ist asiatischen Ursprungs und trat erstmals im unteren Pleistozän mit der Spezies Felis lunensis in Erscheinung.\n" +
                 "    Anschließend breiteten sich verschiedene Unterarten in der gesamten Alten Welt aus. Wegen der morphologischen Ähnlichkeit und der nahen genetischen Verwandtschaft war der Ursprung der Hauskatze (Felis catus) bis vor kurzem nicht gänzlich geklärt.\n" +
                 "    Eine Abstammung von der Manul (Otocolobus manul) oder der Rohrkatze (Felis chaus) wurde von der Wissenschaft verneint.\n" +
                 "    Auch die Meinung, die Hauskatze sei eine Kreuzung aus Rohr- und Wildkatze, ist heute obsolet, wenn es auch vereinzelt zu Paarungen der beiden Arten gekommen sein mag, zumal diese in der F1-Generation fruchtbar sind.\n" +
