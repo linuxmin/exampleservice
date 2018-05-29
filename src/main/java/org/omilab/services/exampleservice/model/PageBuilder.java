@@ -16,7 +16,7 @@ public class PageBuilder {
                 "    <p>Registered since " + forumUser.getCreationDate() + ", Postings: " +
                 forumPostings.size() + "</p>\n" +
                 "  </div>\n" +
-                "</div><div class=\"postings\"");
+                "</div><div class=\"postings\">");
 
         for(int i=0; i<forumPostings.size(); i++){
             sb.append(" <div class=\"panel panel-primary\">\n" +
