@@ -83,6 +83,13 @@ public final class PSMConnectorView {
 				}
 			}
 
+			if(request.getParams().get("navinput").contains("answer")){
+				String thread = request.getParams().get("navinput");
+				String forumThreadIdNew = thread.substring(6);
+				Integer forumThreadId = Integer.parseInt(forumThreadIdNew);
+				forumThread = forumThreadRepository.findByThreadId(forumThreadId);
+			}
+
 			else if(request.getParams().get("navinput").equalsIgnoreCase("newtopic")){
 				sb.append("<div class=\"container\"");
 				sb.append(pageBuilder.createThread(forumUser));
