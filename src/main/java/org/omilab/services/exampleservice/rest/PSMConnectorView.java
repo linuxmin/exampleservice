@@ -74,7 +74,10 @@ public final class PSMConnectorView {
         	forumUser = forumUserRepository.findByUserId(Integer.parseInt(request.getParams().get("login")));
         	sb.append(pageBuilder.loggedInNav(forumUser));
 
-
+        	if(request.getParams().get("navinput").equalsIgnoreCase("profile")){
+        		List<ForumPosting> forumPostings = forumPostingRepository.findAllByForumUser_UserId(forumUser.getUserId());
+        		sb.append(pageBuilder.showProfile(forumUser, forumPostings));
+			}
 
         	if(request.getParams().get("navinput").contains("thread")){
         		String thread = request.getParams().get("navinput");
@@ -164,11 +167,12 @@ public final class PSMConnectorView {
 										request.getParams().get("email"));
 								try {
 									forumUserRepository.save(forumUser);
+									sb.append("<div><h1>Thank you! You can login now!</h1></div>");
 								}catch(Exception e){
 									sb.append("<div><h1>Username already existent, try again!</h1></div>");
 
 								}
-								sb.append("<div><h1>Thank you! You can login now!</h1></div>");
+
 							}else
 								sb.append("<div><h1>Passwords didn't match, try again!</h1></div>");
 

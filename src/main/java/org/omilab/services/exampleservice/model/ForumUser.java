@@ -1,6 +1,7 @@
 package org.omilab.services.exampleservice.model;
 
 import javax.persistence.*;
+import java.util.Date;
 import java.util.List;
 
 @Entity
@@ -20,6 +21,9 @@ public class ForumUser {
     @Column
     private String userMail;
 
+    @Column(name="creationDate")
+    private Date creationDate = new Date();
+
     @OneToMany(mappedBy = "forumUser", fetch = FetchType.EAGER, cascade = CascadeType.REMOVE)
     private List<ForumThread> forumThreads;
 
@@ -27,6 +31,14 @@ public class ForumUser {
     private List<ForumPosting> forumPostings;
 
     public ForumUser(){}
+
+    public String getCreationDate() {
+        return creationDate.toString().substring(0,16);
+    }
+
+    public void setCreationDate(Date creationDate) {
+        this.creationDate = creationDate;
+    }
 
     public List<ForumThread> getForumThreads() {
         return forumThreads;

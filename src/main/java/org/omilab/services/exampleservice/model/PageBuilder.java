@@ -1,6 +1,22 @@
 package org.omilab.services.exampleservice.model;
 
+import java.util.List;
+
 public class PageBuilder {
+
+    public String showProfile(ForumUser forumUser, List<ForumPosting> forumPostings){
+
+        return "<div class=\"media\">\n" +
+                "  <div class=\"media-left\">\n" +
+                "    <img src=\"https://www.w3schools.com/bootstrap4/img_avatar3.png\" class=\"media-object\" style=\"width:60px\">\n" +
+                "  </div>\n" +
+                "  <div class=\"media-body\">\n" +
+                "    <h4 class=\"media-heading\">" + forumUser.getUserName() + "</h4>\n" +
+                "    <p>Registered since " + forumUser.getCreationDate() + ", Postings: " +
+                forumPostings.size() + "</p>\n" +
+                "  </div>\n" +
+                "</div>";
+    }
 
     public String showRegistration(){
        return "<form method=\"post\" action=\"\">\n" +

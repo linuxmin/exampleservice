@@ -9,6 +9,7 @@ import java.util.List;
 public interface ForumPostingRepository extends Repository<ForumPosting, Integer> {
 
     List<ForumPosting> findAllByForumThread_ThreadId(Integer forumThreadId);
+    List<ForumPosting> findAllByForumUser_UserId(Integer forumUserId);
 
     ForumPosting save(ForumPosting forumPosting);
 }
