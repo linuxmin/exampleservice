@@ -10,8 +10,7 @@ public class PageBuilder {
         if (!owner) {
             return " <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action\">" + forumThread.getThreadTitle() + "<span class=\"badge badge-primary badge-pill\">" + forumThread.getForumPostings().size() + "</span></a>";
         } else {
-            return " <a href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\" class=\"list-group-item list-group-item-action\">" + forumThread.getThreadTitle() + "<span class=\"badge badge-primary badge-pill\">" + forumThread.getForumPostings().size() + "</span>" +
-                    "</a>" + "<div><button type=\"button\" class=\"btn btn-danger\">Danger</button></div>";
+            return "<div class=\"list-group-item list-group-item-action\">" +"<a class=\"list-group-item list-group-item-action\" href=\"javascript:submitform('thread" + forumThread.getThreadId() + "');\">" + forumThread.getThreadTitle() + "</a><span class=\"badge badge-primary badge-pill\">" + forumThread.getForumPostings().size() + "</span></div>";
 
         }
     }
