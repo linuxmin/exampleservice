@@ -73,23 +73,22 @@ public final class PSMConnectorView {
         	forumUser = forumUserRepository.findByUserId(Integer.parseInt(request.getParams().get("login")));
         	sb.append(pageBuilder.loggedInNav(forumUser));
 
-			if(request.getParams().get("answer") != null){
-				Integer answerThreadId = Integer.parseInt(request.getParams().get("navinput"));
-				forumThread = forumThreadRepository.findByThreadId(answerThreadId);
-				forumPosting.setForumThread(forumThread);
-				forumPosting.setPostingContent(request.getParams().get("answer"));
-				forumPosting.setForumUser(forumUser);
-				forumPostingRepository.save(forumPosting);
-				forumThread.addForumPosting(forumPosting);
 
-		//		forumThreadRepository.findByThreadId(answerThreadId).addForumPosting();
-			}
 
         	if(request.getParams().get("navinput").contains("thread")){
         		String thread = request.getParams().get("navinput");
         		String forumThreadIdNew = thread.substring(6);
         		Integer forumThreadId = Integer.parseInt(forumThreadIdNew);
         		forumThread = forumThreadRepository.findByThreadId(forumThreadId);
+				if(request.getParams().get("answer") != null){
+					forumPosting.setForumThread(forumThread);
+					forumPosting.setPostingContent(request.getParams().get("answer"));
+					forumPosting.setForumUser(forumUser);
+					forumPostingRepository.save(forumPosting);
+					forumThread.addForumPosting(forumPosting);
+
+					//		forumThreadRepository.findByThreadId(answerThreadId).addForumPosting();
+				}
         		sb.append("<div class=\"postings\">");
         		for(int i = 0; i<forumThread.getForumPostings().size(); i++) {
 					sb.append(pageBuilder.showThread(forumThread, i));
