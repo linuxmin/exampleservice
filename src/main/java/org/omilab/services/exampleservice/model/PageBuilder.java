@@ -225,13 +225,6 @@ public class PageBuilder {
                 "  <script src=\"https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js\"></script>\n" +
                 "  <script src=\"https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.0/umd/popper.min.js\"></script>\n" +
                 "  <script src=\"https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/js/bootstrap.min.js\"></script>\n" +
-                "<script type=\"text/javascript\">\n" +
-                "function submitform(p)\n" +
-                "{\n" +
-                " document.getElementById(\"navform\").value = p; " +
-                "  document.loginform.submit();\n" +
-                "}\n" +
-                "</script>\n" +
                 "</head>\n" +
                 "<body data-spy=\"scroll\" data-target=\".navbar\" data-offset=\"50\">" +
                 "\n" +
@@ -242,9 +235,10 @@ public class PageBuilder {
                 "<nav class=\"navbar navbar-expand-sm bg-primary navbar-dark\">\n" +
                 "  <ul class=\"navbar-nav\">\n" +
                 "    <li class=\"nav-item active\">\n" +
-                "      <a class=\"nav-link\" href=\"#\">Home</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=home\">Home</a>\n" +
+                "    </li>\n" +
                 "    <li class=\"nav-item\">\n" +
-                "      <a class=\"nav-link\" href=\"javascript:submitform('register');\">Register</a>\n" +
+                "      <a class=\"nav-link\" href=\"?nav=register;\">Register</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
                 " <form class=\"form-inline\" action=\"\" method=\"post\">\n" +
