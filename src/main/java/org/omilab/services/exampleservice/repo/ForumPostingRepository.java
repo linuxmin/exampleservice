@@ -12,4 +12,5 @@ public interface ForumPostingRepository extends Repository<ForumPosting, Integer
     List<ForumPosting> findAllByForumUser_UserId(Integer forumUserId);
 
     ForumPosting save(ForumPosting forumPosting);
+    ForumPosting deleteByPostingId(Integer postingId);
 }
