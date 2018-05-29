@@ -82,8 +82,13 @@ public final class PSMConnectorView {
 				}
 			}
 
+			else if(request.getParams().get("navinput").equalsIgnoreCase("newtopic")){
+				sb.append("<div class=\"container\"");
+				sb.append(pageBuilder.createThread(forumUser));
+			}
+
 			if(request.getParams().get("threadtitle") != null){
-				//sb.append("<div class=\"container\"");
+
 				forumThread.setThreadTitle(request.getParams().get("threadtitle"));
 				forumUser = forumUserRepository.findByUserName(request.getParams().get("user"));
 				forumThread.setForumUser(forumUser);
@@ -103,7 +108,7 @@ public final class PSMConnectorView {
 					sb.append(pageBuilder.showForum(f));
 				}
 				sb.append("</div>");
-				//sb.append(pageBuilder.createThread(forumUser));
+
 			}
         	//sb.append(pageBuilder.homeSite());
         }else {
