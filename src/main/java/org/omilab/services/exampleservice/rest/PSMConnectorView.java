@@ -152,14 +152,14 @@ public final class PSMConnectorView {
                 }
             }else {
 				sb.append(pageBuilder.notLoggedInNav());
-				System.out.println(request.getParams().get("pwd"));
-				System.out.println(request.getParams().get("rpwd"));
+
 
 				if(request.getParams().get("nav")!=null) {
 					if (request.getParams().get("nav").equalsIgnoreCase("register")) {
 						if(request.getParams().get("username")!=null && request.getParams().get("pwd")!=null && request.getParams().get("rpwd")!=null && request.getParams().get("mail")!=null ){
 							if(request.getParams().get("pwd").equals(request.getParams().get("rpwd"))){
-
+								System.out.println(request.getParams().get("pwd"));
+								System.out.println(request.getParams().get("rpwd"));
 								forumUser.setUserData(request.getParams().get("username"),
 										request.getParams().get("pwd"),
 										request.getParams().get("email"));
