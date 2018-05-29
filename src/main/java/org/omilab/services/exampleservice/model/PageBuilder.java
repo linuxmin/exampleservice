@@ -225,7 +225,7 @@ public class PageBuilder {
                 "      <a class=\"nav-link\" href=\"javascript:submitform('logout');\">Logout</a>\n" +
                 "    </li>\n" +
                 "  </ul>\n" +
-                "  <form class=\"navbar-form navbar-left\" action=\"\">\n" +
+                "  <form class=\"navbar-form navbar-left\" method=\"post\" action=\"\">\n" +
                 "      <div class=\"input-group\">\n" +
                 "        <input type=\"text\" class=\"form-control\" placeholder=\"Search Thread\" name=\"search\">\n" +
                 "   <input type=\"hidden\" name=\"login\" value=\"" + forumUser.getUserId() + "\" />" +
