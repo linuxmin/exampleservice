@@ -58,10 +58,10 @@ public final class PSMConnectorView {
 		ForumUser forumUser = new ForumUser();
 		ForumThread forumThread = new ForumThread();
 		ForumPosting forumPosting = new ForumPosting();
-		System.out.println(servletRequest.getRemoteAddr());
+	//	System.out.println(servletRequest.getRemoteAddr());
 
-		if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
-			return new GenericServiceContent("Not allowed!");
+	//	if(!instanceMgmtService.checkAccess(servletRequest.getRemoteAddr(), instanceid))
+	//		return new GenericServiceContent("Not allowed!");
 
 
 		final StringBuilder sb = new StringBuilder();
