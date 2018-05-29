@@ -140,6 +140,7 @@ public final class PSMConnectorView {
                     sb.append(pageBuilder.loggedInNav(forumUser));
                 }else{
                     sb.append(pageBuilder.notLoggedInNav());
+					sb.append(pageBuilder.homeSite());
                 }
             }else {
 				sb.append(pageBuilder.notLoggedInNav());
