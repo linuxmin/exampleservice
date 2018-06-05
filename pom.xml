@@ -9,7 +9,7 @@
 	<groupId>org.omilab.services</groupId>
     <version>0.1.0-SNAPSHOT</version>
 	<artifactId>exampleservice</artifactId>
-	<packaging>jar</packaging>
+	<packaging>war</packaging>
 	<name>OMiLAB Example Service Template</name>
 	<description>This template provides a starting point to develop your own service</description>
 	<url>http://www.omilab.org</url>
